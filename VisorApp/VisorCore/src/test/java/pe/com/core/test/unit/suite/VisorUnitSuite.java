@@ -5,9 +5,11 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite.SuiteClasses;
 
 import pe.com.core.test.unit.test.PlaylistTest;
+import pe.com.core.test.unit.test.UserTest;
 
 @RunWith(Categories.class)
-@SuiteClasses({PlaylistTest.class})
+@SuiteClasses({UserTest.class,PlaylistTest.class})
+
 public class VisorUnitSuite {
 
 }
