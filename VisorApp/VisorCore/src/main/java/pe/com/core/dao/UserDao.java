@@ -133,5 +133,30 @@ public class UserDao extends Conexion<User>{
 		return users;
 	}
 	
+	public Boolean Login (User e) throws Exception {
+		List<User> users = new ArrayList<User>();
+		User user;
+		try {
+			String password= e.getPassword();
+			String email= e.getEmail();
+			cn= obtenerConexion();
+			String sql = "SELECT * FROM users ";
+			sql += " WHERE UCASE(password) LIKE '%" + password + "%'";
+			sql += " and UCASE(email) LIKE '%" + email + "%'";
+			while (rs.next()) {
+				user = new User();
+				user.setIdUser(rs.getInt("id"));
+				user.setFirstname(rs.getString("firstname").toUpperCase());
+				users.add(user);
+			}
+		} finally {
+        	rs.close();
+            pr.close();
+            cn.close();
+        }
+		
+		return users.size() > 0;
+	}
+	
 	
 }

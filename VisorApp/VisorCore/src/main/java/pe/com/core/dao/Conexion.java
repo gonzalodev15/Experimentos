@@ -8,6 +8,8 @@ import static pe.com.core.util.UtilCore.obtenerPropiedad;
 import java.sql.SQLException;
 import java.util.List;
 
+import pe.com.core.entity.User;
+
 public abstract class Conexion<E> {
     
     protected Connection cn = null;

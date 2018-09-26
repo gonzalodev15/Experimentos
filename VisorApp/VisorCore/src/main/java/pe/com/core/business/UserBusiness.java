@@ -35,4 +35,8 @@ private final UserDao userDao = new UserDao();
 		return this.userDao.listar(firstname.trim().toUpperCase());
 	}
 	
+	public Boolean Login (User user) throws Exception {
+		return this.userDao.Login(user);
+	}
+	
 }
