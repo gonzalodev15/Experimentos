@@ -20,7 +20,6 @@ import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import pe.com.core.dao.UserDao;
-import pe.com.core.entity.Categoria;
 import pe.com.core.entity.User;
 
 
@@ -60,7 +59,7 @@ public class UserTest {
 			System.out.println("metodo insertar");
 			user = new User();
 			user.setFirstname("Daniel");
-			user.setLastname("Mauricio");
+			user.setLastname("Aragon");
 			user.setIdUser(1);
 			when(userDao.insertar(Matchers.any())).thenReturn(user);
 			userDao.insertar(user);
@@ -71,6 +70,7 @@ public class UserTest {
 			Assert.fail("Fallo la prueba: " + e.getMessage());
 		}
 	}
+	
 	@Test
 	public void b_actualizar() {
 		try {
@@ -93,20 +93,5 @@ public class UserTest {
 		}
 	}
 	
-	@Test
-	public void c_listar() {
-		try {
-			System.out.println("metodo listar");
-			List<User> listarUsers = spy(new ArrayList<>());
-			when(listarUsers.add(Matchers.any())).thenReturn(true);
-			when(userDao.listar()).thenReturn(listarUsers);
-			List<User> lista = userDao.listar();
-			Assert.assertTrue(lista.size()>0);
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-			Assert.fail("Fallo la prueba: " + e.getMessage());
-		}
-	}
 
 }
