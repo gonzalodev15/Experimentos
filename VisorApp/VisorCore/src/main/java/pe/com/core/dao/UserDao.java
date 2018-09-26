@@ -133,5 +133,24 @@ public class UserDao extends Conexion<User>{
 		return users;
 	}
 	
+	@Override
+	public User Login (User e) throws Exception {
+		try {
+			String password= e.getPassword();
+			String email= e.getEmail();
+			cn= obtenerConexion();
+			String sql = "SELECT * FROM users ";
+			sql += " WHERE UCASE(password) LIKE '%" + password + "%'";
+			sql += " and UCASE(email) LIKE '%" + email + "%'";
+			pr = cn.prepareStatement(sql);
+			rs = pr.executeQuery();
+		} finally {
+        	rs.close();
+            pr.close();
+            cn.close();
+        }
+		return e;
+	}
+	
 	
 }
