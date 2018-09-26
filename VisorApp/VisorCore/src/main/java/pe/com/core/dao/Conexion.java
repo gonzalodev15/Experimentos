@@ -8,11 +8,6 @@ import static pe.com.core.util.UtilCore.obtenerPropiedad;
 import java.sql.SQLException;
 import java.util.List;
 
-/**
- * Clase utilizada para contener todo los metodos necesarios para conexion con una base de datos
- * @author 	Henry Joe Wong Urquiza
- * @email 	hwongu@gmail.com
- */
 public abstract class Conexion<E> {
     
     protected Connection cn = null;

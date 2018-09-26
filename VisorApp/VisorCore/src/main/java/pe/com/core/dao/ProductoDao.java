@@ -7,11 +7,6 @@ import java.util.List;
 import pe.com.core.entity.Producto;
 import pe.com.core.entity.Categoria;
 
-/**
- * Clase que tiene los metodos de Acceso a Datos para la tabla Producto
- * @author 	Henry Joe Wong Urquiza
- * @email 	hwongu@gmail.com
- */
 public class ProductoDao extends Conexion<Producto> {
 
     @Override

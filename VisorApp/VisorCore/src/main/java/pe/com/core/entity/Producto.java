@@ -3,12 +3,6 @@ package pe.com.core.entity;
 import java.io.Serializable;
 import java.util.Objects;
 
-/**
- * Flujo 01
- * Clase mapeada de la tabla Producto
- * @author Henry Joe Wong Urquiza
- * @email hwongu@gmail.com
- */
 public class Producto implements Serializable {
 
 	private static final long serialVersionUID = 1L;
