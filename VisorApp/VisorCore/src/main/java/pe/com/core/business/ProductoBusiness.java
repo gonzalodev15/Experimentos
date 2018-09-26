@@ -5,11 +5,7 @@ import java.util.List;
 import pe.com.core.dao.ProductoDao;
 import pe.com.core.entity.Producto;
 
-/**
- * Clase que tiene los metodos de Negocio para Producto
- * @author 	Henry Joe Wong Urquiza
- * @email 	hwongu@gmail.com
- */
+
 public class ProductoBusiness {
 
 	private final ProductoDao productoDao = new ProductoDao();
