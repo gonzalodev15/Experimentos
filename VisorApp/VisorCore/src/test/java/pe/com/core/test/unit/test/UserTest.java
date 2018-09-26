@@ -21,6 +21,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 
 import pe.com.core.dao.UserDao;
 import pe.com.core.entity.Categoria;
+import pe.com.core.entity.Producto;
 import pe.com.core.entity.User;
 
 
@@ -60,7 +61,7 @@ public class UserTest {
 			System.out.println("metodo insertar");
 			user = new User();
 			user.setFirstname("Daniel");
-			user.setLastname("Mauricio");
+			user.setLastname("Aragon");
 			user.setIdUser(1);
 			when(userDao.insertar(Matchers.any())).thenReturn(user);
 			userDao.insertar(user);
@@ -99,6 +100,48 @@ public class UserTest {
 		try {
 			System.out.println("metodo listar");
 			/*spy es un @Mock*/
+			List<User> listarUsers = spy(new ArrayList<>());
+			when(listarUsers.add(Matchers.any())).thenReturn(true);
+			when(userDao.listar()).thenReturn(listarUsers);
+			List<User> lista = userDao.listar();
+			Assert.assertTrue(lista.size()>0);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Fallo la prueba: " + e.getMessage());
+		}
+	}
+	
+	@Test
+	public void d_eliminar() {
+		try {
+			System.out.println("metodo actualizar");
+			User userBuscada;
+			user = new User();
+			user.setFirstname("Eduardo");
+			user.setLastname("Aragon");
+//			producto.setIdCategoria(1);
+			when(userDao.obtener(Matchers.any())).thenReturn(user);
+			userBuscada = userDao.obtener(user);
+			
+			when(userDao.eliminar(Matchers.any())).thenReturn(userBuscada);
+			userDao.eliminar(user);
+			System.out.println("Nombre: " + user.getFirstname());
+			Assert.assertTrue(true);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Fallo la prueba: " + e.getMessage());
+		}
+	}
+	
+	@Test
+	public void e_listar_filtro() {
+		try {
+			System.out.println("metodo listar con filtro");
+			/*spy es un @Mock*/
+			user = new User();
+			user.setFirstname("Eduardo");
 			List<User> listarUsers = spy(new ArrayList<>());
 			when(listarUsers.add(Matchers.any())).thenReturn(true);
 			when(userDao.listar()).thenReturn(listarUsers);
