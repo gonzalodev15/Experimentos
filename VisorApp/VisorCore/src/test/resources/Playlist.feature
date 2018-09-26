@@ -1,7 +1,7 @@
-Feature: Gestionar Playlist
-	Como usuario necesito modificar mi videoteca gestionando mis playlists
+Feature: Gestionar Videoteca
+	Como usuario necesito actualizar mi videoteca
 	
-Scenario: Registrar Producto
+Scenario: Registrar Playlist
 	Given despues de iniciar sesion en la aplicacion
 	When hago click en el enlace de Mantenimiento de Producto
 	And luego hago click en el boton de Nuevo Producto
@@ -11,7 +11,7 @@ Scenario: Registrar Producto
 	And presiono el boton de Guardar Producto
 	Then el sistema me mostrara el mensaje Producto de "Se guardo correctamente el Producto"
 	
-Scenario: Actualizar Producto 
+Scenario: Actualizar Playlist 
 	Given despues de iniciar sesion en la aplicacion
 	When hago click en el enlace de Mantenimiento de Producto
 	And busco el producto "Galleta" para seleccionarla de la tabla de Productos
@@ -20,7 +20,7 @@ Scenario: Actualizar Producto
 	And presiono el boton de Guardar Producto
 	Then el sistema me mostrara el mensaje Producto de "Se actualizo correctamente el Producto"
 	
-Scenario: Eliminar Producto
+Scenario: Eliminar Playlist
 	Given despues de iniciar sesion en la aplicacion
 	When hago click en el enlace de Mantenimiento de Producto
 	And busco el producto "Galleta" para seleccionarla de la tabla de Productos

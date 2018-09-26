@@ -8,12 +8,22 @@ public class Playlist implements Serializable{
 	private Integer id;
 	private String name;
 	private String description;
+	private boolean favorite;
 	
-	public Playlist(Integer id, String name, String description) {
+	public boolean isFavorite() {
+		return favorite;
+	}
+
+	public void setFavorite(boolean favorite) {
+		this.favorite = favorite;
+	}
+
+	public Playlist(Integer id, String name, String description, boolean favorite) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.description = description;
+		this.favorite = favorite;
 	}
 	
 	public Playlist() {
