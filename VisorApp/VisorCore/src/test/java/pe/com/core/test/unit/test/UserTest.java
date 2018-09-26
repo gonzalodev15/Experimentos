@@ -30,7 +30,7 @@ import pe.com.core.entity.User;
 
 public class UserTest {
 	@Mock
-	public UserDao userDao; /*se conectaria a la BD si es que no le pongo mock*/
+	public UserDao userDao;
 	@Mock
 	public User user;
 	
@@ -67,7 +67,6 @@ public class UserTest {
 			Assert.assertTrue(user.getIdUser()>0);
 			
 		}catch (Exception e) {
-			// TODO: handle exception
 			e.printStackTrace();
 			Assert.fail("Fallo la prueba: " + e.getMessage());
 		}
@@ -98,7 +97,6 @@ public class UserTest {
 	public void c_listar() {
 		try {
 			System.out.println("metodo listar");
-			/*spy es un @Mock*/
 			List<User> listarUsers = spy(new ArrayList<>());
 			when(listarUsers.add(Matchers.any())).thenReturn(true);
 			when(userDao.listar()).thenReturn(listarUsers);

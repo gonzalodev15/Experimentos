@@ -15,7 +15,7 @@ public class TitleDao extends Conexion<Title>{
 	public Title insertar(Title e) throws Exception {
 		try {
 			cn = obtenerConexion();
-			String sql = "INSERT INTO TITLE (playlist_id, title, year) VALUES(?, ?, ?);";
+			String sql = "INSERT INTO titles (playlist_id, title_name, year) VALUES(?, ?, ?)";
 			pr = cn.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
 			
 			if(e.getPlaylist() != null) {
@@ -38,7 +38,7 @@ public class TitleDao extends Conexion<Title>{
     public Title actualizar(Title e) throws Exception {
        try{
             cn = obtenerConexion();
-            String sql = "UPDATE TITLE SET playlist_id=?,title=?,year=? WHERE id=?";
+            String sql = "UPDATE titles SET playlist_id=?,title_name=?,year=? WHERE id=?";
             pr = cn.prepareStatement(sql);
 			if(e.getPlaylist() != null) {
 				pr.setInt(1, e.getPlaylist().getId());
@@ -61,7 +61,7 @@ public class TitleDao extends Conexion<Title>{
     public Title eliminar(Title e) throws Exception {
         try{
             cn = obtenerConexion();
-            String sql = "DELETE FROM Title WHERE id=?";
+            String sql = "DELETE FROM titles WHERE id=?";
             pr = cn.prepareStatement(sql);
             pr.setInt(1, e.getTitleId());
             pr.executeUpdate();
@@ -77,14 +77,14 @@ public class TitleDao extends Conexion<Title>{
         Title title = null;
         try{
             cn = obtenerConexion();
-            String sql = "select p.*, t.title as title from title t inner join playlist p on p.id = t.playlist_id WHERE t.id=? ORDER BY title";
+            String sql = "select p.*, t.title_name as title from titles t inner join playlists p on p.id = t.playlist_id WHERE t.id=? ORDER BY title_name";
             pr = cn.prepareStatement(sql);
             pr.setInt(1, e.getTitleId());
             rs = pr.executeQuery();
             while(rs.next()){
                 title = new Title();
                 title.setTitleId(rs.getInt("id"));
-                title.setName(rs.getString("title"));
+                title.setName(rs.getString("title_name"));
                 title.setPlaylistId(rs.getInt("playlist_id"));
                 title.setYear(rs.getString("year"));
                 title.setPlaylist(new Playlist());
@@ -104,7 +104,7 @@ public class TitleDao extends Conexion<Title>{
         Title title;
         try{
             cn = obtenerConexion();
-            String sql = "select p.*, t.title as title from title t inner join playlist p on p.id = t.playlist_id ORDER BY title";
+            String sql = "select p.*, t.title_name as title from titles t inner join playlists p on p.id = t.playlist_id ORDER BY title_name";
             pr = cn.prepareStatement(sql);
             rs = pr.executeQuery();
             while(rs.next()){
@@ -132,9 +132,9 @@ public class TitleDao extends Conexion<Title>{
          Title title;
          try{
              cn = obtenerConexion();
-             String sql = "select p.*, t.title as title from title t inner join playlist p on p.id = t-playlist_id ";
+             String sql = "select p.*, t.title_name as title from titles t inner join playlist p on p.id = t.playlist_id ";
              sql+=" WHERE UCASE(p.title) LIKE '%" + nombre + "%'" ;
-             sql+=" ORDER BY nombre";
+             sql+=" ORDER BY title_name";
              pr = cn.prepareStatement(sql);
              rs = pr.executeQuery();
              while(rs.next()){
