@@ -1,34 +1,9 @@
 Feature: Gestionar Videoteca
 	Como usuario necesito actualizar mi videoteca
 	
-Scenario: Registrar Playlist
-	Given despues de iniciar sesion en la aplicacion
-	When hago click en el enlace de Gestionar Videoteca
-	And luego hago click en el boton de Nueva Playlist
-	And en la nueva pantalla escribo en el campo Nombre Playlist el valor de "Playlist 1234"
-	And en la nueva pantalla escribo en el campo Descripcion Producto el valor de "mi descripcion 1234"
-	And en la nueva pantalla clickeo en el boton de Producto Favorito para agregarlo como favorito
-	And presiono el boton de Guardar Playlist
-	Then el sistema me mostrara el mensaje Playlist de "Se guardo correctamente la Playlist"
-	
-Scenario: Actualizar Playlist 
-	Given despues de iniciar sesion en la aplicacion
-	When hago click en el enlace de Gestionar Videoteca
-	And busco el producto "Playlist 1234" para seleccionarla de la tabla de Playlist
-	And hago click en el boton de Editar Playlist
-	And en la nueva pantalla escribo la descripcion del Producto como "mi nueva descripcion 1234"
-	And presiono el boton de Guardar Playlist
-	Then el sistema me mostrara el mensaje Playlist de "Se actualizo correctamente la Playlist"
-
-Scenario: Eliminar Playlist
-	Given despues de iniciar sesion en la aplicacion
-	When hago click en el enlace de Gestionar Videoteca
-	And busco el producto "Playlist 1234" para seleccionarla de la tabla de Playlist
-	And hago click en el boton de Eliminar Playlist
-	Then el sistema me mostrara el mensaje Playlist de "Se elimino correctamente la Playlist"
-	
-#Se evaluará como el sistema responde ante la situación de que el usuario modifique el orden de un ítem Playlist que no se encuentra en las posiciones limites de la lista.
-Scenario: Mover Playlist A
+#Actualizar Videoteca
+#criterio 1
+Scenario: Mover Playlist
 	Given despues de iniciar sesion en la aplicacion
 	When hago click en el enlace de Gestionar Videoteca
 	And busco el producto "Playlist 1234" para seleccionarla de la tabla de Playlist
@@ -36,8 +11,8 @@ Scenario: Mover Playlist A
 	And coloco el indice del item Playlist que quiero mover como "2"
   Then el sistema actualiza la lista con el orden especificado exitosamente
 	
-#Se evaluará como el sistema responde ante la situación de que el usuario modifique el orden de un item Playlist que se ecuentre en la primera posición de la lista
-Scenario: Mover Playlist B
+#criterio 2
+Scenario: Mover Playlist
 	Given despues de iniciar sesion en la aplicacion
 	When hago click en el enlace de Gestionar Videoteca
 	And busco el producto "Playlist 1234" para seleccionarla de la tabla de Playlist
@@ -45,8 +20,8 @@ Scenario: Mover Playlist B
 	And coloco el indice del item Playlist que quiero mover como "-1"
   Then el sistema no actualiza la lista con el orden especificado
   
-#Se evaluará como el sistema responde ante la situación de que el usuario modifique el orden de un item Playlist que se ecuentre en la ultima posición de la lista
-Scenario: Mover Playlist C
+#criterio 3
+Scenario: Mover Playlist
 	Given despues de iniciar sesion en la aplicacion
 	When hago click en el enlace de Gestionar Videoteca
 	And busco el producto "Playlist 1234" para seleccionarla de la tabla de Playlist
@@ -54,12 +29,78 @@ Scenario: Mover Playlist C
 	And coloco el indice del item Playlist que quiero mover como "4"
   Then el sistema no actualiza la lista con el orden especificado
   
-#
-Scenario: Mover Playlist B
+#criterio 4
+Scenario: Eliminar Playlist
 	Given despues de iniciar sesion en la aplicacion
 	When hago click en el enlace de Gestionar Videoteca
 	And busco el producto "Playlist 1234" para seleccionarla de la tabla de Playlist
-	And hago click en el boton de Mover Playlist 
-	And coloco el indice del item Playlist que quiero mover como "4"
-  Then el sistema no actualiza la lista con el orden especificado
-  
+	And hago click en el boton de Eliminar Playlist
+	And hago click en el boton de Esta seguro
+	Then el sistema me mostrara el mensaje Playlist de "Se elimino correctamente la Playlist"
+	
+#criterio 5
+Scenario: Eliminar Playlist
+	Given despues de iniciar sesion en la aplicacion
+	When hago click en el enlace de Gestionar Videoteca
+	And busco el producto "Playlist 1234" para seleccionarla de la tabla de Playlist
+	And hago click en el boton de Eliminar Playlist
+	And hago click en el boton Cancelar Eliminacion
+	Then el sistema me mostrara el mensaje Playlist de "Se elimino correctamente la Playlist"
+	
+#Marcar como favorito
+#criterio 1
+Scenario: Marcar como favorito 
+	Given despues de iniciar sesion en la aplicacion
+	When hago click en el enlace de Gestionar Videoteca
+	And busco el producto "Playlist 1234" para seleccionarla de la tabla de Playlist
+	And hago click en el icono Marcar como favorito durante "1" segundo
+	Then el sistema no me mostrara ningun mensaje con respecto a la Playlist
+	
+#criterio 2
+Scenario: Marcar como favorito 
+	Given despues de iniciar sesion en la aplicacion
+	When hago click en el enlace de Gestionar Videoteca
+	And busco el producto "Playlist 1234" para seleccionarla de la tabla de Playlist
+	And hago click en el icono Marcar como favorito durante "1.5" segundos
+	Then el sistema me mostrara el mensaje Playlist de "Se marco como favorito la Playlist"
+	
+#Registrar playlist
+#criterio 1
+Scenario: Registrar Playlist
+	Given despues de iniciar sesion en la aplicacion
+	When hago click en el enlace de Gestionar Videoteca
+	And luego hago click en el boton de Registrar Playlist
+	And en la nueva pantalla escribo en el campo Nombre Playlist con el valor de ""
+	And en la nueva pantalla escribo en el campo Descripcion Producto el valor de "mi descripcion 1234"
+	And presiono el boton de Guardar Playlist
+	Then el sistema me mostrara el mensaje Playlist de "Se guardo correctamente la Playlist"
+	
+#criterio 2
+Scenario: Registrar Playlist
+	Given despues de iniciar sesion en la aplicacion
+	When hago click en el enlace de Gestionar Videoteca
+	And luego hago click en el boton de Registrar Playlist
+	And en la nueva pantalla escribo en el campo Nombre Playlist con el valor de " name"
+	And en la nueva pantalla escribo en el campo Descripcion Producto el valor de "mi descripcion 1234"
+	And presiono el boton de Guardar Playlist
+	Then el sistema me mostrara el mensaje Playlist de "Se debe insertar un nombre que comience con un caracter"
+	
+#criterio 3
+Scenario: Registrar Playlist
+	Given despues de iniciar sesion en la aplicacion
+	When hago click en el enlace de Gestionar Videoteca
+	And luego hago click en el boton de Registrar Playlist
+	And en la nueva pantalla escribo en el campo Nombre Playlist con el valor de "name "
+	And en la nueva pantalla escribo en el campo Descripcion Producto el valor de "mi descripcion 1234"
+	And presiono el boton de Guardar Playlist
+	Then el sistema me mostrara el mensaje Playlist de "Se guardo correctamente la Playlist"
+	
+#criterio 4
+Scenario: Registrar Playlist
+	Given despues de iniciar sesion en la aplicacion
+	When hago click en el enlace de Gestionar Videoteca
+	And luego hago click en el boton de Registrar Playlist
+	And en la nueva pantalla escribo en el campo Nombre Playlist con el valor de "name"
+	And en la nueva pantalla escribo en el campo Descripcion Producto el valor de "mi descripcion 1234"
+	And presiono el boton de Guardar Playlist
+	Then el sistema me mostrara el mensaje Playlist de "Se guardo correctamente la Playlist"
