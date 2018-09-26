@@ -1,7 +1,7 @@
 Feature: Gestion de Usuario
 	Como Usuario necesito gestionar una mi cuenta
 	
-Scenario: Iniciar_Sesion Usario
+Scenario: Iniciar Sesion Usario A
 	Given despues de iniciar la aplicacion
 	When se muestra la pantalla de Login
 	And en la nueva pantalla escribo en el campo Email el valor de "Daniel_Dedios@yupanqui.rivas.pe"
@@ -9,7 +9,7 @@ Scenario: Iniciar_Sesion Usario
 	And hago click en el boton de Inicar Sesión Registrar usuario
 	Then el sistema me mostrara el mensaje de "Correo o contraseña incorrecta"
 	
-Scenario: Iniciar_Sesion Usario_2
+Scenario: Iniciar Sesion Usario B
 	Given despues de iniciar la aplicacion
 	When se muestra la pantalla de Login
 	And en la nueva pantalla escribo en el campo Email valor incorrecto de"Danie_Dedios@yupanqui.rivas.pe"
@@ -17,7 +17,7 @@ Scenario: Iniciar_Sesion Usario_2
 	And hago click en el boton de Inicar Sesión Registrar usuario
 	Then el sistema me mostrara el mensaje de "Correo o contraseña incorrecta"
 	
-Scenario: Iniciar_Sesion Usario_3
+Scenario: Iniciar Sesion Usario C
 	Given despues de iniciar la aplicacion
 	When se muestra la pantalla de Login
 	And en la nueva pantalla escribo en el campo Email valor de"Daniel_Dedios@yupanqui.rivas.pe"
@@ -25,7 +25,7 @@ Scenario: Iniciar_Sesion Usario_3
 	And hago click en el boton de Inicar Sesión Registrar usuario
 	Then el sistema me mostrara la vista de Videoteca
 
-Scenario: Registrar User_4
+Scenario: Registrar User A
 	Given despues de iniciar la aplicacion
 	When hago click en el enlace de Registrar usuario
 	And en la nueva pantalla escribo en el campo Email el valor de "Luis_Gonzalo_Olivera@upc.edu.pe"
@@ -36,7 +36,7 @@ Scenario: Registrar User_4
 	Then el sistema me mostrara el mensaje Regisrar usuario de "Correo electrónico ya en uso"
 	
 	
-Scenario: Registrar User_5
+Scenario: Registrar User B
 		Given despues de iniciar la aplicacion
 	When hago click en el enlace de Registrar usuario
 	And en la nueva pantalla escribo en el campo Email el valor de "Luis_Gonzalo_Oliveira@upc.edu.pe"
@@ -47,7 +47,7 @@ Scenario: Registrar User_5
 	And hago click en el boton de Terminar
 	Then el sistema me mostrara el mensaje Regisrar usuario de "Algunos campos son invalidos"
 	
-Scenario: Registrar User_6
+Scenario: Registrar User C
 		Given despues de iniciar la aplicacion
 	When hago click en el enlace de Registrar usuario
 	And en la nueva pantalla escribo en el campo Email el valor de "Luis_Gonzalo_Oliveira@upc.edu.pe"
