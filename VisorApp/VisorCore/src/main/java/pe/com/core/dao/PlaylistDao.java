@@ -15,8 +15,8 @@ public class PlaylistDao extends Conexion<Playlist> {
 			String sql = "INSERT INTO playlists (name,description) VALUES (?,?)";
 			pr = cn.prepareStatement(sql,
 					PreparedStatement.RETURN_GENERATED_KEYS);
-			pr.setString(1, e.getName().toUpperCase());
-			pr.setString(2, e.getDescription().toUpperCase());
+			pr.setString(2, e.getName().toUpperCase());
+			pr.setString(3, e.getDescription().toUpperCase());
 			pr.executeUpdate();
 			rs = pr.getGeneratedKeys();
 			rs.next();

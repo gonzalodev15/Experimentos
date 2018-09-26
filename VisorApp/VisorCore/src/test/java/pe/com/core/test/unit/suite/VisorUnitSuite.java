@@ -4,11 +4,10 @@ import org.junit.experimental.categories.Categories;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite.SuiteClasses;
 
-import pe.com.core.test.unit.test.CategoriaTest;
-import pe.com.core.test.unit.test.ProductoTest;
+import pe.com.core.test.unit.test.PlaylistTest;
 
 @RunWith(Categories.class)
-@SuiteClasses({CategoriaTest.class, ProductoTest.class})
+@SuiteClasses({PlaylistTest.class})
 public class VisorUnitSuite {
 
 }
