@@ -13,12 +13,12 @@ public class UserDao extends Conexion<User>{
 	public User insertar(User e) throws Exception {
 		try {
 			cn= obtenerConexion();
-			String sql = "INSERT INTO PRODUCTO (idUser,firstname,lastname,email,password) VALUES (?,?,?,?,?)";
+			String sql = "INSERT INTO users (firstname,lastname,email,password) VALUES (?,?,?,?)";
 			pr = cn.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
-            pr.setString(2, e.getFirstname().toUpperCase());
-            pr.setString(3, e.getLastname());
-            pr.setString(4, e.getEmail());
-            pr.setString(5, e.getPassword());
+            pr.setString(1, e.getFirstname().toUpperCase());
+            pr.setString(2, e.getLastname());
+            pr.setString(3, e.getEmail());
+            pr.setString(4, e.getPassword());
             pr.executeUpdate();
             rs = pr.getGeneratedKeys();
             rs.next();
@@ -35,12 +35,12 @@ public class UserDao extends Conexion<User>{
 	public User actualizar(User e) throws Exception {
 		try{
             cn = obtenerConexion();
-            String sql = "UPDATE User SET firstname=?,lastname=?,email=?,password=? WHERE idUser=?";
+            String sql = "UPDATE users SET firstname=?,lastname=?,email=?,password=? WHERE id=?";
             pr = cn.prepareStatement(sql);
-            pr.setString(2, e.getFirstname().toUpperCase());
-            pr.setString(3, e.getLastname());
-            pr.setString(4, e.getEmail());
-            pr.setString(5, e.getPassword());
+            pr.setString(1, e.getFirstname().toUpperCase());
+            pr.setString(2, e.getLastname());
+            pr.setString(3, e.getEmail());
+            pr.setString(4, e.getPassword());
             pr.executeUpdate();
         }finally{
             pr.close();
@@ -53,7 +53,7 @@ public class UserDao extends Conexion<User>{
 	public User eliminar(User e) throws Exception {
 		try{
             cn = obtenerConexion();
-            String sql = "DELETE FROM User WHERE idUser=?";
+            String sql = "DELETE FROM users WHERE id=?";
             pr = cn.prepareStatement(sql);
             pr.setInt(1, e.getIdUser());
             pr.executeUpdate();
@@ -69,13 +69,13 @@ public class UserDao extends Conexion<User>{
 		User user = null;
 		try {
 			cn = obtenerConexion();
-			String sql = "SELECT * FROM USER WHERE idUser=? ORDER BY firstname";
+			String sql = "SELECT * FROM users WHERE id=? ORDER BY firstname";
 			pr = cn.prepareStatement(sql);
 			pr.setInt(1, e.getIdUser());
 			rs = pr.executeQuery();
 			while (rs.next()) {
 				user = new User();
-				user.setIdUser(rs.getInt("idUser"));
+				user.setIdUser(rs.getInt("id"));
 				user.setFirstname(rs.getString("firstname").toUpperCase());
 			}
 		} finally {
@@ -92,12 +92,12 @@ public class UserDao extends Conexion<User>{
 		User user;
 		try {
 			cn = obtenerConexion();
-			String sql = "SELECT * FROM USER ORDER BY firstname";
+			String sql = "SELECT * FROM users ORDER BY firstname";
 			pr = cn.prepareStatement(sql);
 			rs = pr.executeQuery();
 			while (rs.next()) {
 				user = new User();
-				user.setIdUser(rs.getInt("idUser"));
+				user.setIdUser(rs.getInt("id"));
 				user.setFirstname(rs.getString("firstname").toUpperCase());
 				users.add(user);
 			}
@@ -114,14 +114,14 @@ public class UserDao extends Conexion<User>{
 		User user;
 		try {
 			cn = obtenerConexion();
-			String sql = "SELECT * FROM USER ";
+			String sql = "SELECT * FROM users ";
 			sql += " WHERE UCASE(firstname) LIKE '%" + firstname + "%'";
 			sql += " ORDER BY firstname";
 			pr = cn.prepareStatement(sql);
 			rs = pr.executeQuery();
 			while (rs.next()) {
 				user = new User();
-				user.setIdUser(rs.getInt("idUser"));
+				user.setIdUser(rs.getInt("id"));
 				user.setFirstname(rs.getString("firstname").toUpperCase());
 				users.add(user);
 			}
