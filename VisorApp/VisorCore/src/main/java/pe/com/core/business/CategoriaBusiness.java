@@ -5,6 +5,7 @@ import java.util.List;
 import pe.com.core.dao.CategoriaDao;
 import pe.com.core.entity.Categoria;
 
+
 public class CategoriaBusiness {
 
 	private final CategoriaDao categoriaDao = new CategoriaDao();
