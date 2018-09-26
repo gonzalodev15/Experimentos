@@ -7,6 +7,7 @@ public class Title implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private Integer titleId;
 	private Integer playlistId;
+	private Playlist playlist;
 	private String name;
 	private String year;
 	
@@ -18,12 +19,21 @@ public class Title implements Serializable{
 		this.titleId = titleId;
 	}
 	
-	public Title(Integer titleId, Integer playlistId, String name, String year) {
+	public Title(Integer titleId, Integer playlistId, Playlist playlist, String name, String year) {
 		super();
 		this.titleId = titleId;
 		this.playlistId = playlistId;
+		this.playlist = playlist;
 		this.name = name;
 		this.year = year;
+	}
+	
+	
+	public Playlist getPlaylist() {
+		return playlist;
+	}
+	public void setPlaylist(Playlist playlist) {
+		this.playlist = playlist;
 	}
 	public Integer getTitleId() {
 		return titleId;
