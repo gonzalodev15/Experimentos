@@ -7,10 +7,17 @@ import org.mockito.Mock;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import pe.com.core.business.UserBusiness;
+import pe.com.core.entity.User;
 import cucumber.api.java.en.Given;
 
 public class UserIntegrationTest {
 	
+	
+	private final UserBusiness userBusiness = new UserBusiness();
+	private static User user = new User();
+	private String mensaje = "";
+	private String nombreProducto = "";
 	
 	@Mock
 	private HttpServletResponse response;
