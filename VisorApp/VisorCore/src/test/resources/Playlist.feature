@@ -1,4 +1,4 @@
-Feature: Gestionar Playlist
+Feature: Gestionar Videoteca
 	Como usuario necesito modificar mi videoteca gestionando mis playlists
 	
 Scenario: Registrar Producto

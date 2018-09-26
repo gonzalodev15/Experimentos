@@ -7,16 +7,17 @@ import java.util.List;
 import pe.com.core.entity.Playlist;
 
 public class PlaylistDao extends Conexion<Playlist> {
-//id, name, description
+
 	@Override
 	public Playlist insertar(Playlist e) throws Exception {
 		try {
 			cn = obtenerConexion();
-			String sql = "INSERT INTO playlists (name,description) VALUES (?,?)";
+			String sql = "INSERT INTO playlists (name,description,favorite) VALUES (?,?,?)";
 			pr = cn.prepareStatement(sql,
 					PreparedStatement.RETURN_GENERATED_KEYS);
 			pr.setString(2, e.getName().toUpperCase());
 			pr.setString(3, e.getDescription().toUpperCase());
+			pr.setBoolean(4, e.isFavorite());
 			pr.executeUpdate();
 			rs = pr.getGeneratedKeys();
 			rs.next();
@@ -33,11 +34,12 @@ public class PlaylistDao extends Conexion<Playlist> {
 	public Playlist actualizar(Playlist e) throws Exception {
 		try {
 			cn = obtenerConexion();
-			String sql = "UPDATE playlists SET name=?, description=? WHERE id=?";
+			String sql = "UPDATE playlists SET name=?, description=?, favorite=? WHERE id=?";
 			pr = cn.prepareStatement(sql);
 			pr.setString(1, e.getName().toUpperCase());
 			pr.setString(2, e.getDescription().toUpperCase());
-			pr.setInt(3, e.getId());
+			pr.setBoolean(3, e.isFavorite());
+			pr.setInt(4, e.getId());
 			pr.executeUpdate();
 		} finally {
 			pr.close();
@@ -75,6 +77,7 @@ public class PlaylistDao extends Conexion<Playlist> {
 				play.setId(rs.getInt("id"));
 				play.setName(rs.getString("name").toUpperCase());
 				play.setDescription(rs.getString("description").toUpperCase());
+				play.setFavorite(rs.getBoolean("favorite"));
 			}
 		} finally {
 			rs.close();
@@ -90,13 +93,15 @@ public class PlaylistDao extends Conexion<Playlist> {
 		Playlist play;
 		try {
 			cn = obtenerConexion();
-			String sql = "SELECT * FROM CATEGORIA ORDER BY nombre";
+			String sql = "SELECT * FROM playlists ORDER BY name";
 			pr = cn.prepareStatement(sql);
 			rs = pr.executeQuery();
 			while (rs.next()) {
 				play = new Playlist();
 				play.setId(rs.getInt("id"));
 				play.setName(rs.getString("name").toUpperCase());
+				play.setDescription(rs.getString("description").toUpperCase());
+				play.setFavorite(rs.getBoolean("favorite"));
 				plays.add(play);
 			}
 		} finally {
@@ -121,6 +126,8 @@ public class PlaylistDao extends Conexion<Playlist> {
 				play = new Playlist();
 				play.setId(rs.getInt("id"));
 				play.setName(rs.getString("name").toUpperCase());
+				play.setDescription(rs.getString("description").toUpperCase());
+				play.setFavorite(rs.getBoolean("favorite"));
 				plays.add(play);
 			}
 		} finally {
