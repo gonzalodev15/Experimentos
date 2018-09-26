@@ -6,9 +6,10 @@ import org.junit.runners.Suite.SuiteClasses;
 
 import pe.com.core.test.unit.test.CategoriaTest;
 import pe.com.core.test.unit.test.ProductoTest;
+import pe.com.core.test.unit.test.UserTest;
 
 @RunWith(Categories.class)
-@SuiteClasses({CategoriaTest.class, ProductoTest.class})
+@SuiteClasses({UserTest.class})
 public class VisorUnitSuite {
 
 }
