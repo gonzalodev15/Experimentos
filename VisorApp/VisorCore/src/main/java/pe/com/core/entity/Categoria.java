@@ -4,7 +4,10 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> cd13f4b8e07cb76afdcf02b34622df8795b6abe7
 public class Categoria implements Serializable {
 
 	private static final long serialVersionUID = 1L;
