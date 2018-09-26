@@ -138,7 +138,14 @@ public class UserIntegrationTest {
 
 	@Then("^hago click en el boton de Terminar$")
 	public void hago_click_en_el_boton_de_Terminar() throws Throwable {
-		Assert.assertEquals(arg1, mensaje);
+		try {
+			userBusiness.insertar(user);
+			mensaje = "Se registro correctamente";
+			Assert.assertTrue(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail();
+		}
 	}
 	
 }

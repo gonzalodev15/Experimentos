@@ -134,7 +134,9 @@ public class UserDao extends Conexion<User>{
 	}
 	
 	@Override
-	public User Login (User e) throws Exception {
+	public Boolean Login (User e) throws Exception {
+		List<User> users = new ArrayList<User>();
+		User user;
 		try {
 			String password= e.getPassword();
 			String email= e.getEmail();
@@ -142,14 +144,19 @@ public class UserDao extends Conexion<User>{
 			String sql = "SELECT * FROM users ";
 			sql += " WHERE UCASE(password) LIKE '%" + password + "%'";
 			sql += " and UCASE(email) LIKE '%" + email + "%'";
-			pr = cn.prepareStatement(sql);
-			rs = pr.executeQuery();
+			while (rs.next()) {
+				user = new User();
+				user.setIdUser(rs.getInt("id"));
+				user.setFirstname(rs.getString("firstname").toUpperCase());
+				users.add(user);
+			}
 		} finally {
         	rs.close();
             pr.close();
             cn.close();
         }
-		return e;
+		
+		return users.size() > 0? true: false;
 	}
 	
 	
