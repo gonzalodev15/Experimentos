@@ -2,7 +2,6 @@ package pe.com.core.util;
 
 import java.util.ResourceBundle;
 
-
 public final class UtilCore {
 
     private UtilCore(){

@@ -6,6 +6,7 @@ import java.util.List;
 
 import pe.com.core.entity.Categoria;
 
+
 public class CategoriaDao extends Conexion<Categoria> {
 
 	@Override
