@@ -1,10 +1,9 @@
 package pe.com.core.dao;
+
 import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.List;
 
-import pe.com.core.entity.Categoria;
-import pe.com.core.entity.Producto;
 import pe.com.core.entity.User;
 
 public class UserDao extends Conexion<User>{
@@ -41,6 +40,7 @@ public class UserDao extends Conexion<User>{
             pr.setString(2, e.getLastname());
             pr.setString(3, e.getEmail());
             pr.setString(4, e.getPassword());
+            pr.setInt(5, e.getIdUser());
             pr.executeUpdate();
         }finally{
             pr.close();
@@ -115,9 +115,10 @@ public class UserDao extends Conexion<User>{
 		try {
 			cn = obtenerConexion();
 			String sql = "SELECT * FROM users ";
-			sql += " WHERE UCASE(firstname) LIKE '%" + firstname + "%'";
+			sql += " WHERE UCASE(firstname) LIKE '%?%'";
 			sql += " ORDER BY firstname";
 			pr = cn.prepareStatement(sql);
+			pr.setString(1, firstname);
 			rs = pr.executeQuery();
 			while (rs.next()) {
 				user = new User();
@@ -141,8 +142,12 @@ public class UserDao extends Conexion<User>{
 			String email= e.getEmail();
 			cn= obtenerConexion();
 			String sql = "SELECT * FROM users ";
-			sql += " WHERE UCASE(password) LIKE '%" + password + "%'";
-			sql += " and UCASE(email) LIKE '%" + email + "%'";
+			sql += " WHERE UCASE(password) LIKE '%?%'";
+			sql += " and UCASE(email) LIKE '%?%'";
+			pr = cn.prepareStatement(sql);
+			pr.setString(1, password);
+			pr.setString(2, email);
+			rs = pr.executeQuery();
 			while (rs.next()) {
 				user = new User();
 				user.setIdUser(rs.getInt("id"));

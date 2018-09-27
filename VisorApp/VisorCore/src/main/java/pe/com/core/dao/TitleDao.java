@@ -4,9 +4,7 @@ import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.List;
 
-import pe.com.core.entity.Categoria;
 import pe.com.core.entity.Playlist;
-import pe.com.core.entity.Producto;
 import pe.com.core.entity.Title;
 
 public class TitleDao extends Conexion<Title>{
@@ -133,9 +131,10 @@ public class TitleDao extends Conexion<Title>{
          try{
              cn = obtenerConexion();
              String sql = "select p.*, t.title_name as title from titles t inner join playlist p on p.id = t.playlist_id ";
-             sql+=" WHERE UCASE(p.title) LIKE '%" + nombre + "%'" ;
+             sql+=" WHERE UCASE(p.title) LIKE '%?%'" ;
              sql+=" ORDER BY title_name";
              pr = cn.prepareStatement(sql);
+             pr.setString(1, nombre.toUpperCase());
              rs = pr.executeQuery();
              while(rs.next()){
                  title = new Title();

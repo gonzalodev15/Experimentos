@@ -1,10 +1,7 @@
 package pe.com.core.test.unit.test;
 
-import static org.mockito.Mockito.spy;
-import static org.mockito.Mockito.when;
 
-import java.util.ArrayList;
-import java.util.List;
+import static org.mockito.Mockito.when;
 
 import org.junit.After;
 import org.junit.AfterClass;

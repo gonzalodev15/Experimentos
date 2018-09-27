@@ -3,7 +3,6 @@ package pe.com.core.business;
 import java.util.List;
 
 import pe.com.core.dao.TitleDao;
-import pe.com.core.entity.Producto;
 import pe.com.core.entity.Title;
 
 public class TitleBusiness {

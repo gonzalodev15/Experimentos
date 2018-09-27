@@ -2,9 +2,7 @@ package pe.com.core.business;
 
 import java.util.List;
 
-import pe.com.core.dao.CategoriaDao;
 import pe.com.core.dao.UserDao;
-import pe.com.core.entity.Categoria;
 import pe.com.core.entity.User;
 
 public class UserBusiness {

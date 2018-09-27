@@ -22,7 +22,6 @@ public class UserIntegrationTest {
 	private static User user = new User();
 	private String mensaje = "";
 	private String firstname = "";
-	private String lastname = "";
 	private String email = "";
 	private String password = "";
 	private String confirmPassword = "";

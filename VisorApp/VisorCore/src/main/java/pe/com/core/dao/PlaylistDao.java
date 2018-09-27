@@ -118,9 +118,10 @@ public class PlaylistDao extends Conexion<Playlist> {
 		try {
 			cn = obtenerConexion();
 			String sql = "SELECT * FROM playlists ";
-			sql += " WHERE UCASE(name) LIKE '%" + nombre + "%'";
+			sql += " WHERE UCASE(name) LIKE '%?%'";
 			sql += " ORDER BY name";
 			pr = cn.prepareStatement(sql);
+			pr.setString(1, nombre.toUpperCase());
 			rs = pr.executeQuery();
 			while (rs.next()) {
 				play = new Playlist();

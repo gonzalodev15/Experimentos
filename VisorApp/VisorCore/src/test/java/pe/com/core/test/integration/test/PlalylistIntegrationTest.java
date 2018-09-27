@@ -5,9 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.junit.Assert;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
 
-import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import pe.com.core.business.PlaylistBusiness;
