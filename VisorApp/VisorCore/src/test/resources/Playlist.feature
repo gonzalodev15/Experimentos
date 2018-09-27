@@ -8,7 +8,7 @@ Scenario: Mover Playlist
 	When hago click en el enlace de Gestionar Videoteca
 	And busco el producto "Playlist 1234" para seleccionarla de la tabla de Playlist
 	And hago click en el boton de Mover Playlist 
-	And coloco el indice del item Playlist que quiero mover como "2"
+	And coloco el indice del item Playlist que quiero mover como 2
   Then el sistema actualiza la lista con el orden especificado exitosamente
 	
 #criterio 2
@@ -17,7 +17,7 @@ Scenario: Mover Playlist
 	When hago click en el enlace de Gestionar Videoteca
 	And busco el producto "Playlist 1234" para seleccionarla de la tabla de Playlist
 	And hago click en el boton de Mover Playlist 
-	And coloco el indice del item Playlist que quiero mover como "-1"
+	And coloco el indice del item Playlist que quiero mover como menos 1
   Then el sistema no actualiza la lista con el orden especificado
   
 #criterio 3
@@ -26,7 +26,7 @@ Scenario: Mover Playlist
 	When hago click en el enlace de Gestionar Videoteca
 	And busco el producto "Playlist 1234" para seleccionarla de la tabla de Playlist
 	And hago click en el boton de Mover Playlist 
-	And coloco el indice del item Playlist que quiero mover como "4"
+	And coloco el indice del item Playlist que quiero mover como 4
   Then el sistema no actualiza la lista con el orden especificado
   
 #criterio 4
@@ -53,7 +53,7 @@ Scenario: Marcar como favorito
 	Given despues de iniciar sesion en la aplicacion
 	When hago click en el enlace de Gestionar Videoteca
 	And busco el producto "Playlist 1234" para seleccionarla de la tabla de Playlist
-	And hago click en el icono Marcar como favorito durante "1" segundo
+	And hago click en el icono Marcar como favorito durante 1 segundo
 	Then el sistema no me mostrara ningun mensaje con respecto a la Playlist
 	
 #criterio 2
@@ -61,7 +61,7 @@ Scenario: Marcar como favorito
 	Given despues de iniciar sesion en la aplicacion
 	When hago click en el enlace de Gestionar Videoteca
 	And busco el producto "Playlist 1234" para seleccionarla de la tabla de Playlist
-	And hago click en el icono Marcar como favorito durante "1.5" segundos
+	And hago click en el icono Marcar como favorito durante 1.5 segundos
 	Then el sistema me mostrara el mensaje Playlist de "Se marco como favorito la Playlist"
 	
 #Registrar playlist

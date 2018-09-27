@@ -33,7 +33,7 @@ public class UserIntegrationTest {
 	@Given("^despues de iniciar la aplicacion$")
 	public void despues_de_iniciar_la_aplicacion() throws Throwable {
 		MockitoAnnotations.initMocks(this);
-		Mockito.doNothing().when(response).sendRedirect("http://visorupc.com");
+		Mockito.doNothing().when(response).sendRedirect("http://movienight.com");
 		Assert.assertTrue(true);
 	}
 
@@ -95,13 +95,13 @@ public class UserIntegrationTest {
 	@Then("^el sistema me mostrara la vista de Videoteca$")
 	public void el_sistema_me_mostrara_la_vista_de_Videoteca() throws Throwable {
 		MockitoAnnotations.initMocks(this);
-		Mockito.doNothing().when(response).sendRedirect("http://visorupc.com");
+		Mockito.doNothing().when(response).sendRedirect("http://movienight.com");
 		Assert.assertTrue(true);
 	}
 
 	@When("^hago click en el enlace de Registrar usuario$")
 	public void hago_click_en_el_enlace_de_Registrar_usuario() throws Throwable {
-		Mockito.doNothing().when(response).sendRedirect("http://visorupc.com/mntCategoria.xhtml");
+		Mockito.doNothing().when(response).sendRedirect("http://movienight.com/UserRegsiter.xhtml");
 		Assert.assertTrue(true);
 	}
 
@@ -147,5 +147,4 @@ public class UserIntegrationTest {
 			Assert.fail();
 		}
 	}
-	
 }

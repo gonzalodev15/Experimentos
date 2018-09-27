@@ -64,7 +64,6 @@ public class CategoriaTest {
 			Assert.assertTrue(categoria.getIdCategoria()>0);
 			
 		}catch (Exception e) {
-			// TODO: handle exception
 			e.printStackTrace();
 			Assert.fail("Fallo la prueba: " + e.getMessage());
 		}

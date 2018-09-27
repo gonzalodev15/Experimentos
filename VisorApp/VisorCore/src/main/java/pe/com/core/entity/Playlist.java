@@ -9,7 +9,16 @@ public class Playlist implements Serializable{
 	private String name;
 	private String description;
 	private boolean favorite;
+	private Integer index;
 	
+	public Integer getIndex() {
+		return index;
+	}
+
+	public void setIndex(Integer index) {
+		this.index = index;
+	}
+
 	public boolean isFavorite() {
 		return favorite;
 	}
@@ -18,12 +27,13 @@ public class Playlist implements Serializable{
 		this.favorite = favorite;
 	}
 
-	public Playlist(Integer id, String name, String description, boolean favorite) {
+	public Playlist(Integer id, String name, String description, boolean favorite, Integer index) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.description = description;
 		this.favorite = favorite;
+		this.index = index;
 	}
 	
 	public Playlist() {

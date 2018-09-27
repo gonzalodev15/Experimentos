@@ -81,7 +81,6 @@ public class CategoriaIntegrationTest {
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail();
-			// TODO: handle exception
 		}
 	}
 

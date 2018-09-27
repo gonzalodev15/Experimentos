@@ -21,7 +21,7 @@ Scenario: Iniciar Sesion Usario C
 	Given despues de iniciar la aplicacion
 	When se muestra la pantalla de Login
 	And en la nueva pantalla escribo en el campo Email valor de"Daniel_Dedios@yupanqui.rivas.pe"
-	And en la nueva pantalla escribo en el campo Password valor de "Danielaragon"
+	And en la nueva pantalla escribo en el campo Password el valor de "danielaragon"
 	And hago click en el boton de Inicar Sesión Registrar usuario
 	Then el sistema me mostrara la vista de Videoteca
 
