@@ -9,26 +9,22 @@ public class TitleBusiness {
 
 	private final TitleDao titleDao = new TitleDao();
 	
-	public void insertar(Title title) throws Exception{
+	public void insertar(Title title) {
 		this.titleDao.insertar(title);
 	}
-	public void actualizar(Title title) throws Exception{
+	public void actualizar(Title title) {
 		this.titleDao.actualizar(title);
 	}
 	
-	public void eliminar(Title title) throws Exception{
+	public void eliminar(Title title) {
 		this.titleDao.eliminar(title);
 	}
 	
-	public Title obtener(Integer idTitle)throws Exception{
+	public Title obtener(Integer idTitle) {
 		return this.titleDao.obtener(new Title(idTitle));
 	}
 	
-	public List<Title> listar() throws Exception{
-		return this.titleDao.listar();
-	}
-	
-	public List<Title> listar(String filtro) throws Exception{
+	public List<Title> listar(String filtro) {
 		return this.titleDao.listar(filtro.trim().toUpperCase());
 	}
 	

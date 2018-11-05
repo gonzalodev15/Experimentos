@@ -3,13 +3,14 @@ package pe.com.core.dao;
 import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 import pe.com.core.entity.User;
 
 public class UserDao extends Conexion<User>{
 
 	@Override
-	public User insertar(User e) throws Exception {
+	public User insertar(User e) {
 		try {
 			cn= obtenerConexion();
 			String sql = "INSERT INTO users (firstname,lastname,email,password) VALUES (?,?,?,?)";
@@ -22,50 +23,52 @@ public class UserDao extends Conexion<User>{
             rs = pr.getGeneratedKeys();
             rs.next();
             e.setIdUser(rs.getInt(1));
-		} finally {
-        	rs.close();
+            rs.close();
             pr.close();
             cn.close();
-        }
+		} catch (Exception err) {
+			Logger.getLogger(err.getMessage());
+		}
 		return e;
 	}
 
 	@Override
-	public User actualizar(User e) throws Exception {
+	public User actualizar(User e) {
 		try{
             cn = obtenerConexion();
-            String sql = "UPDATE users SET firstname=?,lastname=?,email=?,password=? WHERE id=?";
+            String sql = "UPDATE users SET firstname=?,lastname=?,email=? WHERE id=?";
             pr = cn.prepareStatement(sql);
             pr.setString(1, e.getFirstname().toUpperCase());
             pr.setString(2, e.getLastname());
             pr.setString(3, e.getEmail());
-            pr.setString(4, e.getPassword());
-            pr.setInt(5, e.getIdUser());
+            pr.setInt(4, e.getIdUser());
             pr.executeUpdate();
-        }finally{
             pr.close();
             cn.close();
-        }
+        }catch (Exception err) {
+			Logger.getLogger(err.getMessage());
+		}
        return e;
 	}
 
 	@Override
-	public User eliminar(User e) throws Exception {
+	public User eliminar(User e) {
 		try{
             cn = obtenerConexion();
             String sql = "DELETE FROM users WHERE id=?";
             pr = cn.prepareStatement(sql);
             pr.setInt(1, e.getIdUser());
             pr.executeUpdate();
-        }finally{
             pr.close();
             cn.close();
-        }
+        }catch (Exception err) {
+			Logger.getLogger(err.getMessage());
+		}
         return e;
 	}
 
 	@Override
-	public User obtener(User e) throws Exception {
+	public User obtener(User e) {
 		User user = null;
 		try {
 			cn = obtenerConexion();
@@ -75,67 +78,49 @@ public class UserDao extends Conexion<User>{
 			rs = pr.executeQuery();
 			while (rs.next()) {
 				user = new User();
-				user.setIdUser(rs.getInt("id"));
-				user.setFirstname(rs.getString("firstname").toUpperCase());
+				user.setIdUser(rs.getInt(MyClass.ID_USER));
+				user.setFirstname(rs.getString(MyClass.FIRSTNAME_USER).toUpperCase());
 			}
-		} finally {
 			rs.close();
 			pr.close();
 			cn.close();
+		} catch (Exception err) {
+			Logger.getLogger(err.getMessage());
 		}
 		return user;
 	}
-
-	@Override
-	public List<User> listar() throws Exception {
-		List<User> users = new ArrayList<User>();
-		User user;
-		try {
-			cn = obtenerConexion();
-			String sql = "SELECT * FROM users ORDER BY firstname";
-			pr = cn.prepareStatement(sql);
-			rs = pr.executeQuery();
-			while (rs.next()) {
-				user = new User();
-				user.setIdUser(rs.getInt("id"));
-				user.setFirstname(rs.getString("firstname").toUpperCase());
-				users.add(user);
-			}
-		} finally {
-			rs.close();
-			pr.close();
-			cn.close();
-		}
-		return users;
-	}
 	
-	public List<User> listar(String firstname) throws Exception {
-		List<User> users = new ArrayList<User>();
+	@Override
+	public List<User> listar(String firstname) {
+		List<User> users = new ArrayList<>();
 		User user;
 		try {
 			cn = obtenerConexion();
 			String sql = "SELECT * FROM users ";
-			sql += " WHERE UCASE(firstname) LIKE '%?%'";
+			if(firstname.isEmpty()) {
+				sql += " WHERE UCASE(firstname) LIKE '%?%'";
+			}
 			sql += " ORDER BY firstname";
 			pr = cn.prepareStatement(sql);
 			pr.setString(1, firstname);
 			rs = pr.executeQuery();
 			while (rs.next()) {
 				user = new User();
-				user.setIdUser(rs.getInt("id"));
-				user.setFirstname(rs.getString("firstname").toUpperCase());
+				user.setIdUser(rs.getInt(MyClass.ID_USER));
+				user.setFirstname(rs.getString(MyClass.FIRSTNAME_USER).toUpperCase());
 				users.add(user);
 			}
-		} finally {
 			rs.close();
 			pr.close();
 			cn.close();
+		} catch (Exception err) {
+			Logger.getLogger(err.getMessage());
 		}
 		return users;
 	}
 	
-	public Boolean Login (User e) throws Exception {
-		List<User> users = new ArrayList<User>();
+	public Boolean login (User e) {
+		List<User> users = new ArrayList<>();
 		User user;
 		try {
 			String password= e.getPassword();
@@ -150,17 +135,18 @@ public class UserDao extends Conexion<User>{
 			rs = pr.executeQuery();
 			while (rs.next()) {
 				user = new User();
-				user.setIdUser(rs.getInt("id"));
-				user.setFirstname(rs.getString("firstname").toUpperCase());
+				user.setIdUser(rs.getInt(MyClass.ID_USER));
+				user.setFirstname(rs.getString(MyClass.FIRSTNAME_USER).toUpperCase());
 				users.add(user);
 			}
-		} finally {
-        	rs.close();
+			rs.close();
             pr.close();
             cn.close();
-        }
+		} catch (Exception err) {
+			Logger.getLogger(err.getMessage());
+		}
 		
-		return users.size() > 0;
+		return users.isEmpty();
 	}
 	
 	

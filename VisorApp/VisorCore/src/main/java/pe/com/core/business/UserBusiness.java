@@ -9,32 +9,28 @@ public class UserBusiness {
 
 private final UserDao userDao = new UserDao();
 	
-	public void insertar(User user) throws Exception{
+	public void insertar(User user) {
 		this.userDao.insertar(user);
 	}
 	
-	public void actualizar(User user) throws Exception{
+	public void actualizar(User user) {
 		this.userDao.actualizar(user);
 	}
 	
-	public void eliminar(User user) throws Exception{
+	public void eliminar(User user) {
 		this.userDao.eliminar(user);
 	}
 	
-	public User obtener(Integer idUser)throws Exception{
+	public User obtener(Integer idUser) {
 		return this.userDao.obtener(new User(idUser));
 	}
 	
-	public List<User> listar() throws Exception{
-		return this.userDao.listar();
-	}
-	
-	public List<User> listar(String firstname) throws Exception{
+	public List<User> listar(String firstname) {
 		return this.userDao.listar(firstname.trim().toUpperCase());
 	}
 	
-	public Boolean Login (User user) throws Exception {
-		return this.userDao.Login(user);
+	public Boolean login (User user) {
+		return this.userDao.login(user);
 	}
 	
 }

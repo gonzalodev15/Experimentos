@@ -100,8 +100,8 @@ public class PlaylistTest {
 			System.out.println("metodo listar");
 			List<Playlist> listarPlaylist = spy(new ArrayList<>());
 			when(listarPlaylist.add(Matchers.any())).thenReturn(true);
-			when(playlistDao.listar()).thenReturn(listarPlaylist);
-			List<Playlist> lista = playlistDao.listar();
+			when(playlistDao.listar("")).thenReturn(listarPlaylist);
+			List<Playlist> lista = playlistDao.listar("");
 			Assert.assertTrue(lista.size()>0);
 			
 		} catch (Exception e) {

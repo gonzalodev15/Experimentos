@@ -9,28 +9,24 @@ public class PlaylistBusiness {
 	
 	private final PlaylistDao playDao = new PlaylistDao();
 	
-	public void insertar(Playlist play) throws Exception{
+	public void insertar(Playlist play) {
 		this.playDao.insertar(play);
 	}
 	
-	public void actualizar(Playlist play) throws Exception{
+	public void actualizar(Playlist play) {
 		this.playDao.actualizar(play);
 	}
 	
-	public void eliminar(Playlist play) throws Exception{
+	public void eliminar(Playlist play){
 		this.playDao.eliminar(play);
 	}
 	
-	public Playlist obtener(Integer id)throws Exception{
+	public Playlist obtener(Integer id) {
 		return this.playDao.obtener(new Playlist(id));
 	}
 	
-	public List<Playlist> listar() throws Exception{
-		return this.playDao.listar();
-	}
-	
-	public List<Playlist> listar(String filtro) throws Exception{
-		return this.playDao.listar(filtro.trim().toUpperCase());
+	public List<Playlist> listar(String filtro) {
+		return this.playDao.listar(filtro);
 	}
 
 }

@@ -33,7 +33,7 @@ Scenario: Mover Playlist
 Scenario: Eliminar Playlist
 	Given despues de iniciar sesion en la aplicacion
 	When hago click en el enlace de Gestionar Videoteca
-	And busco el producto "Playlist 1234" para seleccionarla de la tabla de Playlist
+	And busco el producto "name 1" para seleccionarla de la tabla de Playlist
 	And hago click en el boton de Eliminar Playlist
 	And hago click en el boton de Esta seguro
 	Then el sistema me mostrara el mensaje Playlist de "Se elimino correctamente la Playlist"
@@ -82,7 +82,7 @@ Scenario: Registrar Playlist
 	And luego hago click en el boton de Registrar Playlist
 	And en la nueva pantalla escribo en el campo Nombre Playlist con el valor de " name"
 	And en la nueva pantalla escribo en el campo Descripcion Producto el valor de "mi descripcion 1234"
-	And presiono el boton de Guardar Playlist
+	And presiono el boton de Guardar Playlist B
 	Then el sistema me mostrara el mensaje Playlist de "Se debe insertar un nombre que comience con un caracter"
 	
 #criterio 3

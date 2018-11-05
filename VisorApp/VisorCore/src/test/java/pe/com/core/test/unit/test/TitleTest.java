@@ -72,8 +72,8 @@ public class TitleTest {
 			System.out.println("metodo listar");
 			List<Title> listTitle = spy(new ArrayList<>());
 			when(listTitle.add(Matchers.any())).thenReturn(true);
-			when(titleDao.listar()).thenReturn(listTitle);
-			List<Title> lista = titleDao.listar();
+			when(titleDao.listar("")).thenReturn(listTitle);
+			List<Title> lista = titleDao.listar("");
 			Assert.assertTrue(lista.size()>0);
 			
 		} catch (Exception e) {

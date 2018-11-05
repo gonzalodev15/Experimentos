@@ -8,7 +8,7 @@ public class Playlist implements Serializable{
 	private Integer id;
 	private String name;
 	private String description;
-	private boolean favorite;
+	private int favorite;
 	private Integer index;
 	
 	public Integer getIndex() {
@@ -19,15 +19,15 @@ public class Playlist implements Serializable{
 		this.index = index;
 	}
 
-	public boolean isFavorite() {
+	public int isFavorite() {
 		return favorite;
 	}
 
-	public void setFavorite(boolean favorite) {
+	public void setFavorite(int favorite) {
 		this.favorite = favorite;
 	}
 
-	public Playlist(Integer id, String name, String description, boolean favorite, Integer index) {
+	public Playlist(Integer id, String name, String description, int favorite, Integer index) {
 		super();
 		this.id = id;
 		this.name = name;

@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import static pe.com.core.util.UtilCore.obtenerPropiedad;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.logging.Logger;
 
 public abstract class Conexion<E> {
     
@@ -14,20 +15,25 @@ public abstract class Conexion<E> {
     protected PreparedStatement pr = null;
     protected ResultSet rs = null;
 
-    public Connection obtenerConexion() throws Exception {
-        Class.forName(obtenerPropiedad("conexion.jdbc"));
-        return (DriverManager.getConnection(obtenerPropiedad("conexion.url"), obtenerPropiedad("conexion.usuario"), obtenerPropiedad("conexion.clave")));
+    public Connection obtenerConexion() {
+    	try {
+    		Class.forName(obtenerPropiedad("conexion.jdbc"));
+    		return (DriverManager.getConnection(obtenerPropiedad("conexion.url"), obtenerPropiedad("conexion.usuario"), obtenerPropiedad("conexion.clave")));
+    	} catch(Exception e) {
+    		Logger.getLogger(e.getMessage());
+    		return null;
+    	}
     }
     
-    public abstract E insertar(E e) throws Exception;
+    public abstract E insertar(E e);
     
-    public abstract E actualizar(E e) throws Exception;
+    public abstract E actualizar(E e);
     
-    public abstract E eliminar(E e) throws Exception;
+    public abstract E eliminar(E e);
     
-    public abstract E obtener(E e) throws Exception;
+    public abstract E obtener(E e);
     
-    public abstract List<E> listar() throws Exception;
+    public abstract List<E> listar(String filter);
 
     protected void cerrar(Connection connection) {
         try {
@@ -35,6 +41,7 @@ public abstract class Conexion<E> {
                 connection.close();
             }
         } catch (SQLException e) {
+        	Logger.getLogger(e.getMessage());
         }
     }
 
@@ -44,6 +51,7 @@ public abstract class Conexion<E> {
                 resultSet.close();
             }
         } catch (SQLException e) {
+        	Logger.getLogger(e.getMessage());
         }
     }
     
@@ -53,6 +61,7 @@ public abstract class Conexion<E> {
                 preparedStatement.close();
             }
         } catch (SQLException e) {
+        	Logger.getLogger(e.getMessage());
         }
     }
 
@@ -62,6 +71,7 @@ public abstract class Conexion<E> {
                 cn.rollback();
             }
         } catch (SQLException e) {
+        	Logger.getLogger(e.getMessage());
         }
 
     }
