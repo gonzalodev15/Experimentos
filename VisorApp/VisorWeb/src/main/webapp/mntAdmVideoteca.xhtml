@@ -11,7 +11,7 @@
 			<div class="box-wrap-main">
 				<div class="box-wrap-header">
 					<div class="pull-left">
-						<div class="title-main">#{m['mntAdmProducto.cabecera']}</div>
+						<div class="title-main">#{m['mntAdmVideoteca.cabecera']}</div>
 					</div>
 				</div>
 				<div class="box-form">
@@ -22,7 +22,7 @@
 			            	<h:outputLabel value="#{m['template.filtro']}: " />
 			            	<h:outputLabel value="&#160;" />
 			                <p:inputText id="txtFiltro" value="#{productoController.filtro}" label="#{productoController.filtro}" style="width: 500px" class="form-control" />
-			                <p:watermark for="txtFiltro" value="#{m['mntAdmProducto.filtro']}" />
+			                <p:watermark for="txtFiltro" value="#{m['mntAdmVideoteca.filtro']}" />
 			                <h:outputLabel value="&#160;" />
 			                <p:commandButton id="btnFiltrar" actionListener="#{productoController.buscar}" value="#{m['template.filtrar']}" update="tablaProductos" class="btn-s btn-search"/>
 						</h:panelGrid>
@@ -36,12 +36,12 @@
 			                             emptyMessage="#{m['template.noRegistros']}"
 			                             rowsPerPageTemplate="5,10,15" >
 			                    <f:facet name="header">  
-			                        #{m['mntAdmProducto.lista']}
+			                        #{m['mntAdmVideoteca.lista']}
 			                    </f:facet>
-			                    <p:column headerText="#{m['mntAdmProducto.codigo']}">  
+			                    <p:column headerText="#{m['mntAdmVideoteca.codigo']}">  
 			                        #{i.idProducto}  
 			                    </p:column>
-			                    <p:column headerText="#{m['mntAdmProducto.nombre']}">  
+			                    <p:column headerText="#{m['mntAdmVideoteca.nombre']}">  
 			                        #{i.nombre}  
 			                    </p:column>
 			            </p:dataTable>
@@ -51,7 +51,7 @@
 			                        <p:commandButton id="btnNuevo" value="#{m['template.nuevo']}" action="#{productoController.irNuevo}" ajax="false" style="width: 150px" class="btn-s btn-search" />
 			                        <p:commandButton id="btnActualizar" value="#{m['template.editar']}" action="#{productoController.irActualizar}" ajax="false" style="width: 150px" class="btn-s btn-add" />
 			                        <p:commandButton id="btnEliminar" value="#{m['template.eliminar']}" actionListener="#{productoController.eliminar}" ajax="true" style="width: 150px" update="tablaProductos,messages"  class="btn-s btn-clean">
-			                            <p:confirm header="#{m['mntAdmProducto.eliminar']}" message="#{m['mntAdmProducto.eliminarConfirmacion']}" icon="ui-icon-alert" />
+			                            <p:confirm header="#{m['mntAdmVideoteca.eliminar']}" message="#{m['mntAdmVideoteca.eliminarConfirmacion']}" icon="ui-icon-alert" />
 			                        </p:commandButton>  
 			                    </h:panelGrid>
 						</center>
