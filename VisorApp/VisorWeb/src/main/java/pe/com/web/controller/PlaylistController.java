@@ -15,13 +15,13 @@ import pe.com.core.entity.Playlist;
 import pe.com.web.util.WebUtil;
 
 @ManagedBean
-@SessionScoped
+//@SessionScoped
 public class PlaylistController implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	private static final Logger LOGGER = Logger.getLogger(PlaylistController.class);
 	private String filtro = "";
-	private List<Playlist> listaPlaylist = new ArrayList<>();
+	private List<Playlist> listaPlaylist = new ArrayList<Playlist>();
 	private PlaylistDao playlistDao = new PlaylistDao();
 	private Playlist playlistGuardar =  new Playlist();
 	private Playlist playlistSeleccionada = new Playlist();
@@ -31,7 +31,7 @@ public class PlaylistController implements Serializable{
 	}
 
 	private void limpiar() {
-		this.listaPlaylist = new ArrayList<>();
+		this.listaPlaylist = new ArrayList<Playlist>();
 		this.playlistGuardar = new Playlist();
 		this.playlistSeleccionada = new Playlist();
 	}
@@ -39,6 +39,8 @@ public class PlaylistController implements Serializable{
 	public void insertar() {
 		try {
 			this.playlistGuardar.setFavorite(0);
+			this.playlistGuardar.setDescription("description");
+			this.playlistGuardar.setIndex(1);
 			this.playlistDao.insertar(playlistGuardar);
 			WebUtil.mensajeInformacion(WebUtil.obtenerPropiedad("playlistController.guardarExito"), WebUtil.obtenerPropiedad("PlaylistController.guardarExito"));
             this.limpiar();
@@ -100,49 +102,58 @@ public class PlaylistController implements Serializable{
             this.filtro = "";
             rpta = "actualizarAdmCategoria";
         } else {
-            WebUtil.mensajeAdvertencia(WebUtil.obtenerPropiedad("playlistController.noSeleccionado"), WebUtil.obtenerPropiedad("categoriaController.noSeleccionado"));
+            WebUtil.mensajeAdvertencia(WebUtil.obtenerPropiedad("playlistController.noSeleccionado"), WebUtil.obtenerPropiedad("playlistController.noSeleccionado"));
         }
         return rpta;
     }
-	
+
+	public String getFiltro() {
+		return filtro;
+	}
+
+	public void setFiltro(String filtro) {
+		this.filtro = filtro;
+	}
+
+	public List<Playlist> getListaPlaylist() {
+		return listaPlaylist;
+	}
+
+	public void setListaPlaylist(List<Playlist> listaPlaylist) {
+		this.listaPlaylist = listaPlaylist;
+	}
+
+	public PlaylistDao getPlaylistDao() {
+		return playlistDao;
+	}
+
+	public void setPlaylistDao(PlaylistDao playlistDao) {
+		this.playlistDao = playlistDao;
+	}
+
+	public Playlist getPlaylistGuardar() {
+		return playlistGuardar;
+	}
+
+	public void setPlaylistGuardar(Playlist playlistGuardar) {
+		this.playlistGuardar = playlistGuardar;
+	}
+
+	public Playlist getPlaylistSeleccionada() {
+		return playlistSeleccionada;
+	}
+
+	public void setPlaylistSeleccionada(Playlist playlistSeleccionada) {
+		this.playlistSeleccionada = playlistSeleccionada;
+	}
+
 	public String getInicioMantenimiento() {
-        this.limpiar();
-        return inicioMantenimiento;
-    }
+		return inicioMantenimiento;
+	}
 
-    public void setInicioMantenimiento(String inicioMantenimiento) {
-        this.inicioMantenimiento = inicioMantenimiento;
-    }
-
-    public String getFiltro() {
-        return filtro;
-    }
-
-    public void setFiltro(String filtro) {
-        this.filtro = filtro;
-    }
-
-    public List<Playlist> getListaCategoria() {
-        return listaPlaylist;
-    }
-
-    public void setListaCategoria(List<Playlist> listaPlaylist) {
-        this.listaPlaylist = listaPlaylist;
-    }
-
-    public Playlist getCategoriaSeleccionada() {
-        return playlistSeleccionada;
-    }
-
-    public void setCategoriaSeleccionada(Playlist playlistSeleccionada) {
-        this.playlistSeleccionada = playlistSeleccionada;
-    }
-
-    public Playlist getCategoriaGuardar() {
-        return playlistGuardar;
-    }
-
-    public void setCategoriaDao(PlaylistDao playlistDao) {
-        this.playlistDao = playlistDao;
-    }
+	public void setInicioMantenimiento(String inicioMantenimiento) {
+		this.inicioMantenimiento = inicioMantenimiento;
+	}
+	
+	
 }
