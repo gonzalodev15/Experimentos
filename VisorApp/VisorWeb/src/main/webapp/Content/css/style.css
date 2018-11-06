@@ -286,14 +286,14 @@ body.loading:before{
 ************************/
 
 div.menu {
-	background: #183254;
+	background: #8A0808;
 	width: 204px;
 	position: absolute;
 	top: 0px;
 	left: 0px;
 	bottom: 0px;
 	z-index: 100;
-	display: block;
+	display: block;	
 }
 
 div.menu .btn-show {
@@ -565,7 +565,7 @@ ul.nav-wrap li.nav-01 ul.nav-collapse li.nav-02 ul.nav-collapse-sub li.nav-03 a:
 }
 
 .btn-search:hover {
-	background: #183254;
+	background: #000000;
 	border-bottom: 2px solid #222;
 }
 
@@ -581,7 +581,7 @@ ul.nav-wrap li.nav-01 ul.nav-collapse li.nav-02 ul.nav-collapse-sub li.nav-03 a:
 }
 
 .btn-add:hover {
-	background: #727272;
+	background: #000000;
 	border-bottom: 2px solid #444242;
 }
 
@@ -589,14 +589,14 @@ ul.nav-wrap li.nav-01 ul.nav-collapse li.nav-02 ul.nav-collapse-sub li.nav-03 a:
 	min-width: 94px;
 	height: 34px;
 	border: 2px solid ##000000;
-	background: white;
+	background: #DF0101;
 	color: ##000000;
 	padding: 0px;
 	border-radius: 4px;
 }
 
 .btn-clean:hover {
-	color: #87868A;
+	color: #000000;
 	border: 2px solid #87868A;
 }
 

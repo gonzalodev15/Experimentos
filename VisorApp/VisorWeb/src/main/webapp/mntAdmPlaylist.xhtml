@@ -11,7 +11,7 @@
 			<div class="box-wrap-main">
 				<div class="box-wrap-header">
 					<div class="pull-left">
-						<div class="title-main">#{m['mntAdmCategoria.cabecera']}</div>
+						<div class="title-main">#{m['mntAdmPlaylist.cabecera']}</div>
 					</div>
 				</div>
 				<div class="box-form">
@@ -22,7 +22,7 @@
 							<h:outputLabel value="#{m['template.filtro']}: " />
 							<h:outputLabel value="&#160;" />
 							<p:inputText class="form-control" id="txtFiltro" value="#{playlistController.filtro}" label="#{playlistController.filtro}" style="width: 500px" />
-							<p:watermark for="txtFiltro" value="#{m['mntAdmCategoria.filtro']}" />
+							<p:watermark for="txtFiltro" value="#{m['mntAdmPlaylist.filtro']}" />
 							<h:outputLabel value="&#160;" />
 							<p:commandButton id="btnFiltrar" actionListener="#{playlistController.buscar}" value="#{m['template.filtrar']}" update="tablaCategorias" class="btn-s btn-search"/>
 						</h:panelGrid>
@@ -36,12 +36,12 @@
 							emptyMessage="#{m['template.noRegistros']}"
 							rowsPerPageTemplate="5,10,15" >
 							<f:facet name="header">  
-                        		#{m['mntAdmCategoria.lista']}
+                        		#{m['mntAdmPlaylist.lista']}
 		                    </f:facet>
-							<p:column headerText="#{m['mntAdmCategoria.codigo']}">  
+							<p:column headerText="#{m['mntAdmPlaylist.codigo']}">  
 		                        #{i.id}  
 		                    </p:column>
-							<p:column headerText="#{m['mntAdmCategoria.nombre']}">  
+							<p:column headerText="#{m['mntAdmPlaylist.nombre']}">  
 		                        #{i.name}  
 		                    </p:column>
 						</p:dataTable>
@@ -59,8 +59,8 @@
 									value="#{m['template.eliminar']}"
 									actionListener="#{playlistController.eliminar}" ajax="true"
 									style="width: 150px" update="tablaCategorias,messages" class="btn-s btn-clean" >
-									<p:confirm header="#{m['mntAdmCategoria.eliminar']}"
-										message="#{m['mntAdmCategoria.eliminarConfirmacion']}"
+									<p:confirm header="#{m['mntAdmPlaylist.eliminar']}"
+										message="#{m['mntAdmPlaylist.eliminarConfirmacion']}"
 										icon="ui-icon-alert" />
 								</p:commandButton>
 							</h:panelGrid>
