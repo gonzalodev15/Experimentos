@@ -28,6 +28,10 @@ public class PlaylistController implements Serializable{
 	private String inicioMantenimiento = "";
 	
 	public PlaylistController() {
+		this.listaPlaylist.add(new Playlist(1, "Playlis1", "description1", 0, 1));
+		this.listaPlaylist.add(new Playlist(2, "Playlis2", "description2", 0, 2));
+		this.listaPlaylist.add(new Playlist(3, "Playlis3", "description3", 0, 3));
+		this.listaPlaylist.add(new Playlist(4, "Playlis4", "description4", 0, 4));
 	}
 
 	private void limpiar() {
@@ -40,9 +44,11 @@ public class PlaylistController implements Serializable{
 		try {
 			this.playlistGuardar.setFavorite(0);
 			this.playlistGuardar.setDescription("description");
-			this.playlistGuardar.setIndex(1);
+			this.playlistGuardar.setIndex(2);
+			//this.playlistGuardar.setName("funcion");
+			this.listaPlaylist.add(this.playlistGuardar);
 			this.playlistDao.insertar(playlistGuardar);
-			WebUtil.mensajeInformacion(WebUtil.obtenerPropiedad("playlistController.guardarExito"), WebUtil.obtenerPropiedad("PlaylistController.guardarExito"));
+			WebUtil.mensajeInformacion(WebUtil.obtenerPropiedad("playlistController.guardarExito"), WebUtil.obtenerPropiedad("playlistController.guardarExito"));
             this.limpiar();
 		} catch (Exception e) {
 			String mensaje = WebUtil.controlarError(e, LOGGER);
@@ -64,8 +70,11 @@ public class PlaylistController implements Serializable{
         try {
             if (this.playlistSeleccionada != null && this.playlistSeleccionada.getName().length() >= 0) {
                 this.playlistDao.eliminar(playlistSeleccionada);
+                this.listaPlaylist.remove(playlistSeleccionada);
                 WebUtil.mensajeInformacion(WebUtil.obtenerPropiedad("playlistController.eliminarExito"), WebUtil.obtenerPropiedad("playlistController.eliminarExito"));
-                this.limpiar();
+                //this.limpiar();
+                this.playlistGuardar = new Playlist();
+        		this.playlistSeleccionada = new Playlist();
             } else {
                 WebUtil.mensajeAdvertencia(WebUtil.obtenerPropiedad("playlistController.noSeleccionado"), WebUtil.obtenerPropiedad("playlistController.noSeleccionado"));
             }

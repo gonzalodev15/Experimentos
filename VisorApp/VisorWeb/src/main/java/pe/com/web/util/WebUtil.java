@@ -65,7 +65,7 @@ public class WebUtil {
         }
         sb.append("Imprimir toda la traza del error: \n");
         log.error(sb.toString(), exception);
-        return "Ocurrio un error inesperado, codigo de error: " + idError;
+        return "Ocurrio un error inesperado, codigo de error: " + idError + ": " + exception.getMessage();
     }
 
     public static void redireccionar(String ruta, final Logger log) {
