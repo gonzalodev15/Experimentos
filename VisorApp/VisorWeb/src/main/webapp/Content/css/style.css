@@ -336,11 +336,11 @@ ul.nav-wrap li.nav-01 span.list-collapse {
 }
 
 ul.nav-wrap li.nav-01 span.list-collapse:hover {
-	background: #FF9B00;
+	background: ##000000;
 }
 
 ul.nav-wrap li.nav-01 span.list-collapse.active {
-	background: #0072C1;
+	background: #DF0101;
 }
 
 ul.nav-wrap li.nav-01 span.list-collapse:hover:before {
@@ -360,7 +360,7 @@ ul.nav-wrap li.nav-01 span.list-collapse.active:before {
 	top: 0px;
 	bottom: 0px;
 	left: 0px;
-	background: #FF9B00;
+	background: ##000000;
 }
 
 ul.nav-wrap li.nav-01 span.list-collapse i {
@@ -404,7 +404,7 @@ ul.nav-wrap li.nav-01 ul.nav-collapse li.nav-02 a:before {
 	top: 0px;
 	bottom: 0px;
 	left: 0px;
-	background: #0072C1;
+	background: #DF0101;
 }
 
 ul.nav-wrap li.nav-01 ul.nav-collapse li.nav-02 a:hover {
@@ -433,7 +433,7 @@ ul.nav-wrap li.nav-01 ul.nav-collapse li.nav-02 ul.nav-collapse-sub li.nav-03 a:
 	top: 0px;
 	bottom: 0px;
 	left: 0px;
-	background: #0072C1;
+	background: #DF0101;
 }
 
 ul.nav-wrap li.nav-01 ul.nav-collapse li.nav-02 ul.nav-collapse-sub li.nav-03 a:before {
@@ -489,7 +489,7 @@ ul.nav-wrap li.nav-01 ul.nav-collapse li.nav-02 ul.nav-collapse-sub li.nav-03 a:
 }
 
 .content-body .box-wrap-main .box-wrap-header .title-main span {
-	color: #0072C1;
+	color: #DF0101;
 }
 
 .content-body .box-wrap-main .box-wrap-body {
@@ -556,7 +556,7 @@ ul.nav-wrap li.nav-01 ul.nav-collapse li.nav-02 ul.nav-collapse-sub li.nav-03 a:
 .btn-search {
 	min-width: 94px;
 	height: 34px;
-	background: #0072C1;
+	background: #DF0101;
 	color: white;
 	padding: 0px;
 	border-radius: 4px;
@@ -588,9 +588,9 @@ ul.nav-wrap li.nav-01 ul.nav-collapse li.nav-02 ul.nav-collapse-sub li.nav-03 a:
 .btn-clean {
 	min-width: 94px;
 	height: 34px;
-	border: 2px solid #FF9B00;
+	border: 2px solid ##000000;
 	background: white;
-	color: #FF9B00;
+	color: ##000000;
 	padding: 0px;
 	border-radius: 4px;
 }
@@ -706,14 +706,14 @@ ul.nav-wrap li.nav-01 ul.nav-collapse li.nav-02 ul.nav-collapse-sub li.nav-03 a:
 }
 
 .box-flujo .box-paso .state-paso .state-option.finished {
-	background: #0072C1; /* Old browsers */
-	background: -moz-linear-gradient(top,  #41B1FF 0%, #0072C1 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#41B1FF), color-stop(100%,#0072C1)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #41B1FF 0%,#0072C1 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #41B1FF 0%,#0072C1 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #41B1FF 0%,#0072C1 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  #41B1FF 0%,#0072C1 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#41B1FF', endColorstr='#0072C1',GradientType=0 ); /* IE6-9 */
+	background: #DF0101; /* Old browsers */
+	background: -moz-linear-gradient(top,  #41B1FF 0%, #DF0101 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#41B1FF), color-stop(100%,#DF0101)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #41B1FF 0%,#DF0101 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #41B1FF 0%,#DF0101 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #41B1FF 0%,#DF0101 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #41B1FF 0%,#DF0101 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#41B1FF', endColorstr='#DF0101',GradientType=0 ); /* IE6-9 */
 }
 
 .box-flujo .box-paso .state-paso .state-option.finished i {
@@ -745,7 +745,7 @@ ul.nav-wrap li.nav-01 ul.nav-collapse li.nav-02 ul.nav-collapse-sub li.nav-03 a:
 
 .box-paso-text .item-text span.name-paso {
 	display: block;
-	color: #0072C1;
+	color: #DF0101;
 	font-size: 13px;
 	font-weight: bold;
 }
@@ -986,7 +986,7 @@ ul.nav-wrap li.nav-01 ul.nav-collapse li.nav-02 ul.nav-collapse-sub li.nav-03 a:
 	border: none;
 	color: white;
 	text-align: center;
-	background: #FF9B00;
+	background: ##000000;
 	color: white;
 	padding: 0px;
 	border-radius: 4px;
@@ -1129,12 +1129,12 @@ ul.nav-wrap li.nav-01 ul.nav-collapse li.nav-02 ul.nav-collapse-sub li.nav-03 a:
 }
 
 .breadcrumbs span.active-view {
-	color: #0072C1;
+	color: #DF0101;
 	font-size: 12px;
 }
 
 .breadcrumbs span.nivel-bread {
-	color: #0072C1;
+	color: #DF0101;
 	font-size: 12px;
 }
 
