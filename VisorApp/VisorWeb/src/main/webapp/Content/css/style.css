@@ -302,7 +302,7 @@ div.menu .btn-show {
 	position: absolute;
 	top: 6px;
 	right: -17px;
-	background: url('../../Content/images/system/ico-show-menu.png') 0px 0px no-repeat;
+	background: url('../../Content/images/system/menu-mantenimiento.png') 0px 0px no-repeat;
 	cursor: pointer;
 }
 
@@ -572,7 +572,7 @@ ul.nav-wrap li.nav-01 ul.nav-collapse li.nav-02 ul.nav-collapse-sub li.nav-03 a:
 .btn-add {
 	min-width: 94px;
 	height: 34px;
-	background: #FF9B00;
+	background: #DF0101;
 	color: white;
 	padding: 0px;
 	border-radius: 4px;
@@ -786,7 +786,7 @@ ul.nav-wrap li.nav-01 ul.nav-collapse li.nav-02 ul.nav-collapse-sub li.nav-03 a:
 }
 
 .list-actividad .bloque-user .name-user {
-	color: #F09A00;
+	color: #f20404;
 	font-weight: 500;
 }
 
@@ -825,7 +825,7 @@ ul.nav-wrap li.nav-01 ul.nav-collapse li.nav-02 ul.nav-collapse-sub li.nav-03 a:
 	content: '';
 	width: 8px;
 	height: 8px;
-	background: #F09A00;
+	background: #f20404;
 	position: absolute;
 	top: 5px;
 	left: 3px;
@@ -1157,7 +1157,7 @@ ul.nav-wrap li.nav-01 ul.nav-collapse li.nav-02 ul.nav-collapse-sub li.nav-03 a:
 }
 
 .wrap-login .form-login .form-login-header {
-	background: #3D71BD;
+	background: #DF0101;
 	text-transform: uppercase;
 	padding: 12px;
 	/* text-align: left; */
