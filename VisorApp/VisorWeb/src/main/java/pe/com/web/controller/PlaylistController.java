@@ -4,12 +4,18 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
+
 import org.apache.log4j.Logger;
 
 import pe.com.core.dao.PlaylistDao;
 import pe.com.core.entity.Playlist;
 import pe.com.web.util.WebUtil;
 
+@ManagedBean
+@SessionScoped
 public class PlaylistController implements Serializable{
 
 	private static final long serialVersionUID = 1L;
