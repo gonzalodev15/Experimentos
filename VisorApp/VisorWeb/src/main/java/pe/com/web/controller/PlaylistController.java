@@ -28,10 +28,6 @@ public class PlaylistController implements Serializable{
 	private String inicioMantenimiento = "";
 	
 	public PlaylistController() {
-		this.listaPlaylist.add(new Playlist(1, "Playlis1", "description1", 0, 1));
-		this.listaPlaylist.add(new Playlist(2, "Playlis2", "description2", 0, 2));
-		this.listaPlaylist.add(new Playlist(3, "Playlis3", "description3", 0, 3));
-		this.listaPlaylist.add(new Playlist(4, "Playlis4", "description4", 0, 4));
 	}
 
 	private void limpiar() {
@@ -86,6 +82,10 @@ public class PlaylistController implements Serializable{
 	
 	public void buscar() {
         try {
+        	this.listaPlaylist.add(new Playlist(1, "Playlis1", "description1", 0, 1));
+    		this.listaPlaylist.add(new Playlist(2, "Playlis2", "description2", 0, 2));
+    		this.listaPlaylist.add(new Playlist(3, "Playlis3", "description3", 0, 3));
+    		this.listaPlaylist.add(new Playlist(4, "Playlis4", "description4", 0, 4));
             this.listaPlaylist = this.playlistDao.listar(this.filtro.trim());
         } catch (Exception exception) {
             String mensaje = WebUtil.controlarError(exception, LOGGER);
