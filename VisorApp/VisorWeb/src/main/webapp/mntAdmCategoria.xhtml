@@ -16,21 +16,21 @@
 				</div>
 				<div class="box-form">
 					<h:form prependId="false" id="frmIndex">
-						<h:inputHidden value="#{categoriaController.inicioMantenimiento}" />
+						<h:inputHidden value="#{playlistController.inicioMantenimiento}" />
 						<br />
 						<h:panelGrid columns="6">
 							<h:outputLabel value="#{m['template.filtro']}: " />
 							<h:outputLabel value="&#160;" />
-							<p:inputText class="form-control" id="txtFiltro" value="#{categoriaController.filtro}" label="#{categoriaController.filtro}" style="width: 500px" />
+							<p:inputText class="form-control" id="txtFiltro" value="#{playlistController.filtro}" label="#{playlistController.filtro}" style="width: 500px" />
 							<p:watermark for="txtFiltro" value="#{m['mntAdmCategoria.filtro']}" />
 							<h:outputLabel value="&#160;" />
-							<p:commandButton id="btnFiltrar" actionListener="#{categoriaController.buscar}" value="#{m['template.filtrar']}" update="tablaCategorias" class="btn-s btn-search"/>
+							<p:commandButton id="btnFiltrar" actionListener="#{playlistController.buscar}" value="#{m['template.filtrar']}" update="tablaCategorias" class="btn-s btn-search"/>
 						</h:panelGrid>
 						<br />
 						<p:dataTable id="tablaCategorias" var="i"
-							value="#{categoriaController.listaCategoria}"
-							rowKey="#{i.idCategoria}"
-							selection="#{categoriaController.categoriaSeleccionada}"
+							value="#{playlistController.listaPlaylist}"
+							rowKey="#{i.id}"
+							selection="#{playlistController.playlistSeleccionada}"
 							selectionMode="single" rows="50" paginator="true"
 							paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} "
 							emptyMessage="#{m['template.noRegistros']}"
@@ -39,25 +39,25 @@
                         		#{m['mntAdmCategoria.lista']}
 		                    </f:facet>
 							<p:column headerText="#{m['mntAdmCategoria.codigo']}">  
-		                        #{i.idCategoria}  
+		                        #{i.id}  
 		                    </p:column>
 							<p:column headerText="#{m['mntAdmCategoria.nombre']}">  
-		                        #{i.nombre}  
+		                        #{i.name}  
 		                    </p:column>
 						</p:dataTable>
 						<br />
 						<center>
 							<h:panelGrid columns="3">
 								<p:commandButton id="btnNuevo" value="#{m['template.nuevo']}"
-									action="#{categoriaController.irNuevo}" ajax="false"
+									action="#{playlistController.irNuevo}" ajax="false"
 									style="width: 150px" class="btn-s btn-search"/>
 								<p:commandButton id="btnActualizar"
 									value="#{m['template.editar']}"
-									action="#{categoriaController.irActualizar}" ajax="false"
+									action="#{playlistController.irActualizar}" ajax="false"
 									style="width: 150px" class="btn-s btn-add" />
 								<p:commandButton id="btnEliminar"
 									value="#{m['template.eliminar']}"
-									actionListener="#{categoriaController.eliminar}" ajax="true"
+									actionListener="#{playlistController.eliminar}" ajax="true"
 									style="width: 150px" update="tablaCategorias,messages" class="btn-s btn-clean" >
 									<p:confirm header="#{m['mntAdmCategoria.eliminar']}"
 										message="#{m['mntAdmCategoria.eliminarConfirmacion']}"
