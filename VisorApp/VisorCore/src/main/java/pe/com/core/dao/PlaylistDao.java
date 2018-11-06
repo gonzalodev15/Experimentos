@@ -13,7 +13,7 @@ public class PlaylistDao extends Conexion<Playlist> {
 	public Playlist insertar(Playlist e) {
 		try {
 			cn = obtenerConexion();
-			String sql = "use movienightdb;INSERT INTO playlists (name,description,favorite) VALUES (?,?,?,?)";
+			String sql = "use movienightdb;INSERT INTO playlists (name,description,favorite,index_i) VALUES (?,?,?,?)";
 			/*pr = cn.prepareStatement(sql,
 					PreparedStatement.RETURN_GENERATED_KEYS);*/
 			pr = cn.prepareStatement(sql);
