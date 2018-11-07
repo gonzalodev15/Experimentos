@@ -1,6 +1,7 @@
 package pe.com.core.dao;
 
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
@@ -14,8 +15,8 @@ public class PlaylistDao extends Conexion<Playlist> {
 		try {
 			cn = obtenerConexion();
 			String sql = "INSERT INTO playlists (name,description,favorite,index_i) VALUES (?,?,?,?)";
-			/*pr = cn.prepareStatement(sql,
-					PreparedStatement.RETURN_GENERATED_KEYS);*/
+			pr = cn.prepareStatement(sql,
+					PreparedStatement.RETURN_GENERATED_KEYS);
 			pr = cn.prepareStatement(sql);
 			pr.setString(1, e.getName());
 			pr.setString(2, e.getDescription().toUpperCase());
@@ -105,29 +106,39 @@ public class PlaylistDao extends Conexion<Playlist> {
 	
 		try {
 			cn = obtenerConexion();
-			String sql = "SELECT * FROM playlists ";
+			String sql = "SELECT * FROM playlists";
 			if(nombre.isEmpty()) {
 				sql += " WHERE UCASE(name) LIKE '%?%'";
 			}
 			sql += " ORDER BY name";
 			pr = cn.prepareStatement(sql);
-			pr.setString(1, nombre.toUpperCase());
+			//pr.setString(1, nombre.toUpperCase());
 			rs = pr.executeQuery();
 			while (rs.next()) {
 				play = new Playlist();
-				play.setId(rs.getInt(MyClass.ID_PLAY));
-				play.setName(rs.getString(MyClass.NAME_PLAY).toUpperCase());
-				play.setDescription(rs.getString(MyClass.DESCRIPTION_PLAY).toUpperCase());
-				play.setFavorite(rs.getInt(MyClass.FAVORITE_PLAY));
+				play.setId(rs.getInt("id"));
+				play.setName(rs.getString("name").toUpperCase());
+				play.setDescription(rs.getString("description").toUpperCase());
+				play.setFavorite(rs.getInt("favorite"));
+				play.setIndex(rs.getInt("index_i"));
 				plays.add(play);
+				System.out.println(play.getName());
 			}
 			rs.close();
 			pr.close();
 			cn.close();
-		} catch (Exception err) {
+		} catch (SQLException err) {
 			System.out.println(err.getMessage());
 			err.printStackTrace();
 		}
 		return plays;
 	}
+	
+	/*public static void main(String[] args) {
+		PlaylistDao li = new PlaylistDao();
+		li.listar("");
+
+	}*/
 }
+
+

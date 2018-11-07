@@ -86,7 +86,7 @@ public class PlaylistController implements Serializable{
 	public void buscar() {
         try {
         	
-            this.listaPlaylist = this.playlistDao.listar(this.filtro.trim());
+            this.listaPlaylist = this.playlistDao.listar(this.filtro);
         } catch (Exception exception) {
             String mensaje = WebUtil.controlarError(exception, LOGGER);
             WebUtil.mensajeError(mensaje, mensaje);

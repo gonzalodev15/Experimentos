@@ -171,6 +171,7 @@ public class PlalylistIntegrationTest {
 	public void presiono_el_boton_de_Guardar_Playlist() throws Throwable {
 		try {
 			Playlist aux = playlistBusiness.obtener(4);
+			playlistBusiness.listar("");
 	    	playlistBusiness.insertar(aux);
 	    	mensaje = "Se guardo correctamente la Playlist";
 	    	Assert.assertTrue(true);
