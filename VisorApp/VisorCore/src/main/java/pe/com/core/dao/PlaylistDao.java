@@ -13,11 +13,11 @@ public class PlaylistDao extends Conexion<Playlist> {
 	public Playlist insertar(Playlist e) {
 		try {
 			cn = obtenerConexion();
-			String sql = "use movienightdb;INSERT INTO playlists (name,description,favorite,index_i) VALUES (?,?,?,?)";
+			String sql = "INSERT INTO playlists (name,description,favorite,index_i) VALUES (?,?,?,?)";
 			/*pr = cn.prepareStatement(sql,
 					PreparedStatement.RETURN_GENERATED_KEYS);*/
 			pr = cn.prepareStatement(sql);
-			pr.setString(1, e.getName().toUpperCase());
+			pr.setString(1, e.getName());
 			pr.setString(2, e.getDescription().toUpperCase());
 			pr.setInt(3, e.isFavorite());
 			pr.setInt(4, e.getIndex());
@@ -29,7 +29,8 @@ public class PlaylistDao extends Conexion<Playlist> {
 			pr.close();
 			cn.close();
 		} catch (Exception err) {
-			Logger.getLogger(err.getMessage());
+			System.out.println(err.getMessage());
+			err.printStackTrace();
 		}
 		return e;
 	}
@@ -38,7 +39,7 @@ public class PlaylistDao extends Conexion<Playlist> {
 	public Playlist actualizar(Playlist e){
 		try {
 			cn = obtenerConexion();
-			String sql = "use movienightdb;UPDATE playlists SET favorite=? WHERE id=?";
+			String sql = "UPDATE playlists SET favorite=? WHERE id=?";
 			pr = cn.prepareStatement(sql);
 			//pr.setString(1, e.getName().toUpperCase());
 			//pr.setString(2, e.getDescription().toUpperCase());
@@ -48,7 +49,8 @@ public class PlaylistDao extends Conexion<Playlist> {
 			pr.close();
 			cn.close();
 		} catch (Exception err) {
-			Logger.getLogger(err.getMessage());
+			System.out.println(err.getMessage());
+			err.printStackTrace();
 		}
 		return e;
 	}
@@ -57,20 +59,21 @@ public class PlaylistDao extends Conexion<Playlist> {
 	public Playlist eliminar(Playlist e) {
 		try {
 			cn = obtenerConexion();
-			String sql = "use movienightdb;DELETE FROM playlists WHERE id=?";
+			String sql = "DELETE FROM playlists WHERE id=?";
 			pr = cn.prepareStatement(sql);
 			pr.setInt(1, e.getId());
 			pr.executeUpdate();
 			pr.close();
 			cn.close();
 		} catch (Exception err) {
-			Logger.getLogger(err.getMessage());
+			System.out.println(err.getMessage());
+			err.printStackTrace();
 		}
 		return e;
 	}
 
 	@Override
-	public Playlist obtener(Playlist e)  {
+	public Playlist obtener(Playlist e) {
 		Playlist play = null;
 		try {
 			cn = obtenerConexion();
@@ -90,7 +93,8 @@ public class PlaylistDao extends Conexion<Playlist> {
 			pr.close();
 			cn.close();
 		} catch (Exception err) {
-			Logger.getLogger(err.getMessage());
+			System.out.println(err.getMessage());
+			err.printStackTrace();
 		}
 		return play;
 	}
@@ -101,7 +105,7 @@ public class PlaylistDao extends Conexion<Playlist> {
 	
 		try {
 			cn = obtenerConexion();
-			String sql = "use movienightdb;SELECT * FROM playlists ";
+			String sql = "SELECT * FROM playlists ";
 			if(nombre.isEmpty()) {
 				sql += " WHERE UCASE(name) LIKE '%?%'";
 			}
@@ -121,7 +125,8 @@ public class PlaylistDao extends Conexion<Playlist> {
 			pr.close();
 			cn.close();
 		} catch (Exception err) {
-			Logger.getLogger(err.getMessage());
+			System.out.println(err.getMessage());
+			err.printStackTrace();
 		}
 		return plays;
 	}

@@ -79,7 +79,7 @@ public class PlalylistIntegrationTest {
 	@When("^hago click en el boton de Eliminar Playlist$")
 	public void hago_click_en_el_boton_de_Eliminar_Playlist() throws Throwable {
 		try {
-			playlist.setId(1);
+			playlist.setId(2);
 			playlistBusiness.eliminar(playlist);
 		    mensaje = "Se elimino correctamente la Playlist";
 		    Assert.assertTrue(true);
@@ -170,7 +170,7 @@ public class PlalylistIntegrationTest {
 	@When("^presiono el boton de Guardar Playlist$")
 	public void presiono_el_boton_de_Guardar_Playlist() throws Throwable {
 		try {
-			Playlist aux = playlistBusiness.obtener(1);
+			Playlist aux = playlistBusiness.obtener(4);
 	    	playlistBusiness.insertar(aux);
 	    	mensaje = "Se guardo correctamente la Playlist";
 	    	Assert.assertTrue(true);

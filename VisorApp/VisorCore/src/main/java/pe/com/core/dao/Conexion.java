@@ -20,7 +20,8 @@ public abstract class Conexion<E> {
     		Class.forName(obtenerPropiedad("conexion.jdbc"));
     		return (DriverManager.getConnection(obtenerPropiedad("conexion.url"), obtenerPropiedad("conexion.usuario"), obtenerPropiedad("conexion.clave")));
     	} catch(Exception e) {
-    		Logger.getLogger(e.getMessage());
+    		e.printStackTrace();
+    		//Logger.getLogger(e.getMessage());
     		return null;
     	}
     }
@@ -41,7 +42,8 @@ public abstract class Conexion<E> {
                 connection.close();
             }
         } catch (SQLException e) {
-        	Logger.getLogger(e.getMessage());
+        	e.printStackTrace();
+        	//Logger.getLogger(e.getMessage());
         }
     }
 
@@ -51,7 +53,8 @@ public abstract class Conexion<E> {
                 resultSet.close();
             }
         } catch (SQLException e) {
-        	Logger.getLogger(e.getMessage());
+        	e.printStackTrace();
+        	//Logger.getLogger(e.getMessage());
         }
     }
     
@@ -61,7 +64,8 @@ public abstract class Conexion<E> {
                 preparedStatement.close();
             }
         } catch (SQLException e) {
-        	Logger.getLogger(e.getMessage());
+        	e.printStackTrace();
+        	//Logger.getLogger(e.getMessage());
         }
     }
 
@@ -71,7 +75,8 @@ public abstract class Conexion<E> {
                 cn.rollback();
             }
         } catch (SQLException e) {
-        	Logger.getLogger(e.getMessage());
+        	e.printStackTrace();
+        	//Logger.getLogger(e.getMessage());
         }
 
     }
