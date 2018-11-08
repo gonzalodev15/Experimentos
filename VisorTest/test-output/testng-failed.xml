@@ -6,7 +6,7 @@
     <parameter name="navegador" value="chrome"/>
     <parameter name="testlinkNombreNavegador" value="Chrome"/>
     <parameter name="remoto" value="0"/>
-    <parameter name="rutaArchivoExcel" value="C:\Users\Administrator\Desktop\Repos\Experimentos\MovieNightData.xlsx"/>
+    <parameter name="rutaArchivoExcel" value="C:\Users\Administrator\Desktop\Tercera_Presentación\Experimentos\MovieNightData.xlsx"/>
     <classes>
       <class name="pe.com.test.system.testCase.MantenimientoCategoria">
         <methods>

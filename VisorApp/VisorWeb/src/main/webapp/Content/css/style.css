@@ -307,11 +307,11 @@ div.menu .btn-show {
 }
 
 nav.nav {
-	background: #22436F;
+	background: #DF0101;
 	display: block;
 	margin: 8px 0px 0px 0px;
 	padding-top: 5px;
-	border-top: 1px solid #E7BB10;
+	border-top: 1px solid #DF0101;
 }
 
 ul.nav-wrap {
@@ -329,8 +329,8 @@ ul.nav-wrap li.nav-01 span.list-collapse {
 	display: block;
 	padding: 11px 38px 11px 16px;
 	color: #FFF;
-	background: #183254;
-	border-bottom: 1px solid #3D71BD;
+	background: #DF0101;
+	border-bottom: 1px solid #DF0101;
 	position: relative;
 	cursor: pointer;
 }
@@ -588,16 +588,17 @@ ul.nav-wrap li.nav-01 ul.nav-collapse li.nav-02 ul.nav-collapse-sub li.nav-03 a:
 .btn-clean {
 	min-width: 94px;
 	height: 34px;
-	border: 2px solid #183254;
 	background: #DF0101;
-	color: ##000000;
+	color: white;
 	padding: 0px;
 	border-radius: 4px;
+	border: none;
+	border-bottom: 2px solid #183254;
 }
 
 .btn-clean:hover {
-	color: #000000;
-	border: 2px solid #87868A;
+	background: #000000;
+	border-bottom: 2px solid #444242;
 }
 
 .alert-custom .alert {

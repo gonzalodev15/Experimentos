@@ -17,7 +17,7 @@
 	 <test name="MantenimientoCategoriaChrome">
 		<parameter name="testlinkIdNavegador" value="6"/>
 		<parameter name="testlinkNombreNavegador" value="Chrome"/>
-		<parameter name="rutaArchivoExcel" value="C:\Users\Administrator\Desktop\Repos\Experimentos\MovieNightData.xlsx"/>
+		<parameter name="rutaArchivoExcel" value="C:\Users\Administrator\Desktop\Tercera_Presentación\Experimentos\MovieNightData.xlsx"/>
 		
 		<parameter name="navegador" value="chrome" />
 		<parameter name="remoto" value="0" />
