@@ -1,0 +1,28 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="VisorTestSuite" parallel="tests">
+	<!-- <test name="MantenimientoCategoriaFirefox">
+		<parameter name="testlinkIdNavegador" value="7"/>
+		<parameter name="testlinkNombreNavegador" value="Firefox"/>
+		<parameter name="rutaArchivoExcel" value="C:\Users\Administrator\Desktop\Repos\Experimentos\MovieNightData.xlsx"/>
+		
+		<parameter name="navegador" value="firefox" />
+		<parameter name="remoto" value="0" />
+		<classes>
+			<class name="pe.com.test.system.testCase.MantenimientoCategoria" />
+		</classes>
+	</test>-->
+	
+	<!-- opera9 -->
+	
+	 <test name="MantenimientoCategoriaChrome">
+		<parameter name="testlinkIdNavegador" value="6"/>
+		<parameter name="testlinkNombreNavegador" value="Chrome"/>
+		<parameter name="rutaArchivoExcel" value="C:\Users\Administrator\Desktop\Repos\Experimentos\MovieNightData.xlsx"/>
+		
+		<parameter name="navegador" value="chrome" />
+		<parameter name="remoto" value="0" />
+		<classes>
+			<class name="pe.com.test.system.testCase.MantenimientoCategoria" />
+		</classes>
+	</test>
+</suite> 
