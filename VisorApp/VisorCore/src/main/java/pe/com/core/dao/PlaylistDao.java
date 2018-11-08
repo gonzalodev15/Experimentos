@@ -106,13 +106,15 @@ public class PlaylistDao extends Conexion<Playlist> {
 	
 		try {
 			cn = obtenerConexion();
-			String sql = "SELECT * FROM playlists";
-			if(nombre.isEmpty()) {
-				sql += " WHERE UCASE(name) LIKE '%?%'";
+			String sql = "";
+			if(!nombre.isEmpty()) {
+				sql = "SELECT * FROM playlists WHERE name LIKE '%?%' ORDER BY name";
+				pr = cn.prepareStatement(sql);
+				pr.setString(1, nombre.toUpperCase().trim());
+			} else {
+				sql = "SELECT * FROM playlists ORDER BY name";
+				pr = cn.prepareStatement(sql);
 			}
-			sql += " ORDER BY name";
-			pr = cn.prepareStatement(sql);
-			//pr.setString(1, nombre.toUpperCase());
 			rs = pr.executeQuery();
 			while (rs.next()) {
 				play = new Playlist();
@@ -122,7 +124,7 @@ public class PlaylistDao extends Conexion<Playlist> {
 				play.setFavorite(rs.getInt("favorite"));
 				play.setIndex(rs.getInt("index_i"));
 				plays.add(play);
-				System.out.println(play.getName());
+				System.out.println(play.getId()+", "+play.getName()+", "+play.getDescription()+", "+play.getIndex()+", "+play.isFavorite());
 			}
 			rs.close();
 			pr.close();

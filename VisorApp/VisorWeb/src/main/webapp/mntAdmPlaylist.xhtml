@@ -48,13 +48,16 @@
 						<br />
 						<center>
 							<h:panelGrid columns="3">
+							
 								<p:commandButton id="btnNuevo" value="#{m['template.nuevo']}"
 									action="#{playlistController.irNuevo}" ajax="false"
 									style="width: 150px" class="btn-s btn-search"/>
+									
 								<p:commandButton id="btnActualizar"
 									value="#{m['template.editar']}"
 									action="#{playlistController.irActualizar}" ajax="false"
 									style="width: 150px" class="btn-s btn-add" />
+									
 								<p:commandButton id="btnEliminar"
 									value="#{m['template.eliminar']}"
 									actionListener="#{playlistController.eliminar}" ajax="true"
@@ -62,6 +65,7 @@
 									<p:confirm header="#{m['mntAdmPlaylist.eliminar']}"
 										message="#{m['mntAdmPlaylist.eliminarConfirmacion']}"
 										icon="ui-icon-alert" />
+										
 								</p:commandButton>
 							</h:panelGrid>
 						</center>

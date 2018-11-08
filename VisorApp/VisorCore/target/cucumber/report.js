@@ -58,14 +58,14 @@ formatter.match({
   "location": "PlalylistIntegrationTest.despues_de_iniciar_sesion_en_la_aplicacion()"
 });
 formatter.result({
-  "duration": 219379100,
+  "duration": 208770400,
   "status": "passed"
 });
 formatter.match({
   "location": "PlalylistIntegrationTest.hago_click_en_el_enlace_de_Gestionar_Videoteca()"
 });
 formatter.result({
-  "duration": 115900,
+  "duration": 115400,
   "status": "passed"
 });
 formatter.match({
@@ -78,14 +78,14 @@ formatter.match({
   "location": "PlalylistIntegrationTest.busco_el_producto_para_seleccionarla_de_la_tabla_de_Playlist(String)"
 });
 formatter.result({
-  "duration": 2883700,
+  "duration": 2122300,
   "status": "passed"
 });
 formatter.match({
   "location": "PlalylistIntegrationTest.hago_click_en_el_boton_de_Mover_Playlist()"
 });
 formatter.result({
-  "duration": 95200,
+  "duration": 97100,
   "status": "passed"
 });
 formatter.match({
@@ -98,14 +98,14 @@ formatter.match({
   "location": "PlalylistIntegrationTest.coloco_el_indice_del_item_Playlist_que_quiero_mover_como(int)"
 });
 formatter.result({
-  "duration": 734100,
+  "duration": 492400,
   "status": "passed"
 });
 formatter.match({
   "location": "PlalylistIntegrationTest.el_sistema_actualiza_la_lista_con_el_orden_especificado_exitosamente()"
 });
 formatter.result({
-  "duration": 741500,
+  "duration": 95700,
   "status": "passed"
 });
 formatter.scenario({
@@ -156,14 +156,14 @@ formatter.match({
   "location": "PlalylistIntegrationTest.despues_de_iniciar_sesion_en_la_aplicacion()"
 });
 formatter.result({
-  "duration": 656800,
+  "duration": 465600,
   "status": "passed"
 });
 formatter.match({
   "location": "PlalylistIntegrationTest.hago_click_en_el_enlace_de_Gestionar_Videoteca()"
 });
 formatter.result({
-  "duration": 123800,
+  "duration": 74000,
   "status": "passed"
 });
 formatter.match({
@@ -176,14 +176,14 @@ formatter.match({
   "location": "PlalylistIntegrationTest.busco_el_producto_para_seleccionarla_de_la_tabla_de_Playlist(String)"
 });
 formatter.result({
-  "duration": 176900,
+  "duration": 168400,
   "status": "passed"
 });
 formatter.match({
   "location": "PlalylistIntegrationTest.hago_click_en_el_boton_de_Mover_Playlist()"
 });
 formatter.result({
-  "duration": 129600,
+  "duration": 117900,
   "status": "passed"
 });
 formatter.match({
@@ -196,14 +196,14 @@ formatter.match({
   "location": "PlalylistIntegrationTest.coloco_el_indice_del_item_Playlist_que_quiero_mover_como_menos(int)"
 });
 formatter.result({
-  "duration": 168000,
+  "duration": 83200,
   "status": "passed"
 });
 formatter.match({
   "location": "PlalylistIntegrationTest.el_sistema_no_actualiza_la_lista_con_el_orden_especificado()"
 });
 formatter.result({
-  "duration": 133300,
+  "duration": 93600,
   "status": "passed"
 });
 formatter.scenario({
@@ -254,14 +254,14 @@ formatter.match({
   "location": "PlalylistIntegrationTest.despues_de_iniciar_sesion_en_la_aplicacion()"
 });
 formatter.result({
-  "duration": 340300,
+  "duration": 574400,
   "status": "passed"
 });
 formatter.match({
   "location": "PlalylistIntegrationTest.hago_click_en_el_enlace_de_Gestionar_Videoteca()"
 });
 formatter.result({
-  "duration": 118100,
+  "duration": 75400,
   "status": "passed"
 });
 formatter.match({
@@ -274,14 +274,14 @@ formatter.match({
   "location": "PlalylistIntegrationTest.busco_el_producto_para_seleccionarla_de_la_tabla_de_Playlist(String)"
 });
 formatter.result({
-  "duration": 115900,
+  "duration": 83200,
   "status": "passed"
 });
 formatter.match({
   "location": "PlalylistIntegrationTest.hago_click_en_el_boton_de_Mover_Playlist()"
 });
 formatter.result({
-  "duration": 177700,
+  "duration": 106400,
   "status": "passed"
 });
 formatter.match({
@@ -294,14 +294,14 @@ formatter.match({
   "location": "PlalylistIntegrationTest.coloco_el_indice_del_item_Playlist_que_quiero_mover_como(int)"
 });
 formatter.result({
-  "duration": 99600,
+  "duration": 51800,
   "status": "passed"
 });
 formatter.match({
   "location": "PlalylistIntegrationTest.el_sistema_no_actualiza_la_lista_con_el_orden_especificado()"
 });
 formatter.result({
-  "duration": 147600,
+  "duration": 67300,
   "status": "passed"
 });
 formatter.scenario({
@@ -352,14 +352,14 @@ formatter.match({
   "location": "PlalylistIntegrationTest.despues_de_iniciar_sesion_en_la_aplicacion()"
 });
 formatter.result({
-  "duration": 463700,
+  "duration": 276100,
   "status": "passed"
 });
 formatter.match({
   "location": "PlalylistIntegrationTest.hago_click_en_el_enlace_de_Gestionar_Videoteca()"
 });
 formatter.result({
-  "duration": 79200,
+  "duration": 60700,
   "status": "passed"
 });
 formatter.match({
@@ -372,21 +372,21 @@ formatter.match({
   "location": "PlalylistIntegrationTest.busco_el_producto_para_seleccionarla_de_la_tabla_de_Playlist(String)"
 });
 formatter.result({
-  "duration": 174100,
+  "duration": 98600,
   "status": "passed"
 });
 formatter.match({
   "location": "PlalylistIntegrationTest.hago_click_en_el_boton_de_Eliminar_Playlist()"
 });
 formatter.result({
-  "duration": 278022600,
+  "duration": 224965900,
   "status": "passed"
 });
 formatter.match({
   "location": "PlalylistIntegrationTest.hago_click_en_el_boton_de_Esta_seguro()"
 });
 formatter.result({
-  "duration": 90100,
+  "duration": 122900,
   "status": "passed"
 });
 formatter.match({
@@ -399,7 +399,7 @@ formatter.match({
   "location": "PlalylistIntegrationTest.el_sistema_me_mostrara_el_mensaje_Playlist_de(String)"
 });
 formatter.result({
-  "duration": 54200,
+  "duration": 55200,
   "status": "passed"
 });
 formatter.scenario({
@@ -450,14 +450,14 @@ formatter.match({
   "location": "PlalylistIntegrationTest.despues_de_iniciar_sesion_en_la_aplicacion()"
 });
 formatter.result({
-  "duration": 659500,
+  "duration": 247800,
   "status": "passed"
 });
 formatter.match({
   "location": "PlalylistIntegrationTest.hago_click_en_el_enlace_de_Gestionar_Videoteca()"
 });
 formatter.result({
-  "duration": 100400,
+  "duration": 57400,
   "status": "passed"
 });
 formatter.match({
@@ -470,21 +470,21 @@ formatter.match({
   "location": "PlalylistIntegrationTest.busco_el_producto_para_seleccionarla_de_la_tabla_de_Playlist(String)"
 });
 formatter.result({
-  "duration": 146800,
+  "duration": 152400,
   "status": "passed"
 });
 formatter.match({
   "location": "PlalylistIntegrationTest.hago_click_en_el_boton_de_Eliminar_Playlist()"
 });
 formatter.result({
-  "duration": 4178100,
+  "duration": 6819700,
   "status": "passed"
 });
 formatter.match({
   "location": "PlalylistIntegrationTest.hago_click_en_el_boton_Cancelar_Eliminacion()"
 });
 formatter.result({
-  "duration": 91800,
+  "duration": 127200,
   "status": "passed"
 });
 formatter.match({
@@ -497,7 +497,7 @@ formatter.match({
   "location": "PlalylistIntegrationTest.el_sistema_me_mostrara_el_mensaje_Playlist_de(String)"
 });
 formatter.result({
-  "duration": 50600,
+  "duration": 44300,
   "status": "passed"
 });
 formatter.scenario({
@@ -547,14 +547,14 @@ formatter.match({
   "location": "PlalylistIntegrationTest.despues_de_iniciar_sesion_en_la_aplicacion()"
 });
 formatter.result({
-  "duration": 278200,
+  "duration": 299100,
   "status": "passed"
 });
 formatter.match({
   "location": "PlalylistIntegrationTest.hago_click_en_el_enlace_de_Gestionar_Videoteca()"
 });
 formatter.result({
-  "duration": 89100,
+  "duration": 65100,
   "status": "passed"
 });
 formatter.match({
@@ -567,7 +567,7 @@ formatter.match({
   "location": "PlalylistIntegrationTest.busco_el_producto_para_seleccionarla_de_la_tabla_de_Playlist(String)"
 });
 formatter.result({
-  "duration": 188300,
+  "duration": 148100,
   "status": "passed"
 });
 formatter.match({
@@ -580,14 +580,14 @@ formatter.match({
   "location": "PlalylistIntegrationTest.hago_click_en_el_icono_Marcar_como_favorito_durante_segundo(int)"
 });
 formatter.result({
-  "duration": 70300,
+  "duration": 55100,
   "status": "passed"
 });
 formatter.match({
   "location": "PlalylistIntegrationTest.el_sistema_no_me_mostrara_ningun_mensaje_con_respecto_a_la_Playlist()"
 });
 formatter.result({
-  "duration": 17700,
+  "duration": 17600,
   "status": "passed"
 });
 formatter.scenario({
@@ -633,14 +633,14 @@ formatter.match({
   "location": "PlalylistIntegrationTest.despues_de_iniciar_sesion_en_la_aplicacion()"
 });
 formatter.result({
-  "duration": 729100,
+  "duration": 429100,
   "status": "passed"
 });
 formatter.match({
   "location": "PlalylistIntegrationTest.hago_click_en_el_enlace_de_Gestionar_Videoteca()"
 });
 formatter.result({
-  "duration": 73400,
+  "duration": 89100,
   "status": "passed"
 });
 formatter.match({
@@ -653,7 +653,7 @@ formatter.match({
   "location": "PlalylistIntegrationTest.busco_el_producto_para_seleccionarla_de_la_tabla_de_Playlist(String)"
 });
 formatter.result({
-  "duration": 84900,
+  "duration": 253700,
   "status": "passed"
 });
 formatter.match({
@@ -670,7 +670,7 @@ formatter.match({
   "location": "PlalylistIntegrationTest.hago_click_en_el_icono_Marcar_como_favorito_durante_segundos(int,int)"
 });
 formatter.result({
-  "duration": 3979100,
+  "duration": 30391400,
   "status": "passed"
 });
 formatter.match({
@@ -683,7 +683,7 @@ formatter.match({
   "location": "PlalylistIntegrationTest.el_sistema_me_mostrara_el_mensaje_Playlist_de(String)"
 });
 formatter.result({
-  "duration": 53400,
+  "duration": 92100,
   "status": "passed"
 });
 formatter.scenario({
@@ -743,21 +743,21 @@ formatter.match({
   "location": "PlalylistIntegrationTest.despues_de_iniciar_sesion_en_la_aplicacion()"
 });
 formatter.result({
-  "duration": 414200,
+  "duration": 586500,
   "status": "passed"
 });
 formatter.match({
   "location": "PlalylistIntegrationTest.hago_click_en_el_enlace_de_Gestionar_Videoteca()"
 });
 formatter.result({
-  "duration": 104000,
+  "duration": 145400,
   "status": "passed"
 });
 formatter.match({
   "location": "PlalylistIntegrationTest.luego_hago_click_en_el_boton_de_Registrar_Playlist()"
 });
 formatter.result({
-  "duration": 80300,
+  "duration": 99500,
   "status": "passed"
 });
 formatter.match({
@@ -770,7 +770,7 @@ formatter.match({
   "location": "PlalylistIntegrationTest.en_la_nueva_pantalla_escribo_en_el_campo_Nombre_Playlist_con_el_valor_de(String)"
 });
 formatter.result({
-  "duration": 88400,
+  "duration": 85500,
   "status": "passed"
 });
 formatter.match({
@@ -783,14 +783,14 @@ formatter.match({
   "location": "PlalylistIntegrationTest.en_la_nueva_pantalla_escribo_en_el_campo_Descripcion_Producto_el_valor_de(String)"
 });
 formatter.result({
-  "duration": 39400,
+  "duration": 63800,
   "status": "passed"
 });
 formatter.match({
   "location": "PlalylistIntegrationTest.presiono_el_boton_de_Guardar_Playlist()"
 });
 formatter.result({
-  "duration": 24550600,
+  "duration": 35341400,
   "status": "passed"
 });
 formatter.match({
@@ -803,7 +803,7 @@ formatter.match({
   "location": "PlalylistIntegrationTest.el_sistema_me_mostrara_el_mensaje_Playlist_de(String)"
 });
 formatter.result({
-  "duration": 39800,
+  "duration": 49700,
   "status": "passed"
 });
 formatter.scenario({
@@ -859,21 +859,21 @@ formatter.match({
   "location": "PlalylistIntegrationTest.despues_de_iniciar_sesion_en_la_aplicacion()"
 });
 formatter.result({
-  "duration": 383000,
+  "duration": 727200,
   "status": "passed"
 });
 formatter.match({
   "location": "PlalylistIntegrationTest.hago_click_en_el_enlace_de_Gestionar_Videoteca()"
 });
 formatter.result({
-  "duration": 50300,
+  "duration": 75600,
   "status": "passed"
 });
 formatter.match({
   "location": "PlalylistIntegrationTest.luego_hago_click_en_el_boton_de_Registrar_Playlist()"
 });
 formatter.result({
-  "duration": 67000,
+  "duration": 53900,
   "status": "passed"
 });
 formatter.match({
@@ -886,7 +886,7 @@ formatter.match({
   "location": "PlalylistIntegrationTest.en_la_nueva_pantalla_escribo_en_el_campo_Nombre_Playlist_con_el_valor_de(String)"
 });
 formatter.result({
-  "duration": 40100,
+  "duration": 45600,
   "status": "passed"
 });
 formatter.match({
@@ -899,14 +899,14 @@ formatter.match({
   "location": "PlalylistIntegrationTest.en_la_nueva_pantalla_escribo_en_el_campo_Descripcion_Producto_el_valor_de(String)"
 });
 formatter.result({
-  "duration": 29300,
+  "duration": 32100,
   "status": "passed"
 });
 formatter.match({
   "location": "PlalylistIntegrationTest.presiono_el_boton_de_Guardar_Playlist_B()"
 });
 formatter.result({
-  "duration": 16600,
+  "duration": 20400,
   "status": "passed"
 });
 formatter.match({
@@ -919,7 +919,7 @@ formatter.match({
   "location": "PlalylistIntegrationTest.el_sistema_me_mostrara_el_mensaje_Playlist_de(String)"
 });
 formatter.result({
-  "duration": 28800,
+  "duration": 33200,
   "status": "passed"
 });
 formatter.scenario({
@@ -975,21 +975,21 @@ formatter.match({
   "location": "PlalylistIntegrationTest.despues_de_iniciar_sesion_en_la_aplicacion()"
 });
 formatter.result({
-  "duration": 287900,
+  "duration": 630000,
   "status": "passed"
 });
 formatter.match({
   "location": "PlalylistIntegrationTest.hago_click_en_el_enlace_de_Gestionar_Videoteca()"
 });
 formatter.result({
-  "duration": 46700,
+  "duration": 125300,
   "status": "passed"
 });
 formatter.match({
   "location": "PlalylistIntegrationTest.luego_hago_click_en_el_boton_de_Registrar_Playlist()"
 });
 formatter.result({
-  "duration": 108100,
+  "duration": 158800,
   "status": "passed"
 });
 formatter.match({
@@ -1002,7 +1002,7 @@ formatter.match({
   "location": "PlalylistIntegrationTest.en_la_nueva_pantalla_escribo_en_el_campo_Nombre_Playlist_con_el_valor_de(String)"
 });
 formatter.result({
-  "duration": 47700,
+  "duration": 59500,
   "status": "passed"
 });
 formatter.match({
@@ -1015,14 +1015,14 @@ formatter.match({
   "location": "PlalylistIntegrationTest.en_la_nueva_pantalla_escribo_en_el_campo_Descripcion_Producto_el_valor_de(String)"
 });
 formatter.result({
-  "duration": 30100,
+  "duration": 36500,
   "status": "passed"
 });
 formatter.match({
   "location": "PlalylistIntegrationTest.presiono_el_boton_de_Guardar_Playlist()"
 });
 formatter.result({
-  "duration": 17169100,
+  "duration": 23045800,
   "status": "passed"
 });
 formatter.match({
@@ -1035,7 +1035,7 @@ formatter.match({
   "location": "PlalylistIntegrationTest.el_sistema_me_mostrara_el_mensaje_Playlist_de(String)"
 });
 formatter.result({
-  "duration": 44300,
+  "duration": 45400,
   "status": "passed"
 });
 formatter.scenario({
@@ -1091,21 +1091,21 @@ formatter.match({
   "location": "PlalylistIntegrationTest.despues_de_iniciar_sesion_en_la_aplicacion()"
 });
 formatter.result({
-  "duration": 309200,
+  "duration": 333500,
   "status": "passed"
 });
 formatter.match({
   "location": "PlalylistIntegrationTest.hago_click_en_el_enlace_de_Gestionar_Videoteca()"
 });
 formatter.result({
-  "duration": 197700,
+  "duration": 138700,
   "status": "passed"
 });
 formatter.match({
   "location": "PlalylistIntegrationTest.luego_hago_click_en_el_boton_de_Registrar_Playlist()"
 });
 formatter.result({
-  "duration": 76600,
+  "duration": 50700,
   "status": "passed"
 });
 formatter.match({
@@ -1118,7 +1118,7 @@ formatter.match({
   "location": "PlalylistIntegrationTest.en_la_nueva_pantalla_escribo_en_el_campo_Nombre_Playlist_con_el_valor_de(String)"
 });
 formatter.result({
-  "duration": 40400,
+  "duration": 36600,
   "status": "passed"
 });
 formatter.match({
@@ -1131,14 +1131,14 @@ formatter.match({
   "location": "PlalylistIntegrationTest.en_la_nueva_pantalla_escribo_en_el_campo_Descripcion_Producto_el_valor_de(String)"
 });
 formatter.result({
-  "duration": 28900,
+  "duration": 32800,
   "status": "passed"
 });
 formatter.match({
   "location": "PlalylistIntegrationTest.presiono_el_boton_de_Guardar_Playlist()"
 });
 formatter.result({
-  "duration": 22617100,
+  "duration": 17295400,
   "status": "passed"
 });
 formatter.match({
@@ -1151,7 +1151,7 @@ formatter.match({
   "location": "PlalylistIntegrationTest.el_sistema_me_mostrara_el_mensaje_Playlist_de(String)"
 });
 formatter.result({
-  "duration": 62000,
+  "duration": 99800,
   "status": "passed"
 });
 });
